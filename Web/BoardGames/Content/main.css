@@ -388,6 +388,7 @@ ul.sub-menu {
 **************************/
 
 #footer {
+  padding-top: 30px;
   padding-bottom: 10px;
   background-image: url(../images/home/footer.png);
   background-repeat: repeat-x;
@@ -537,6 +538,7 @@ ul.sub-menu {
 #home-slider {
   background: url(../images/home/slider-bg.png) 0 100% repeat-x;
   position: relative;
+  margin-bottom: 30px;
 }
 
 #home-slider .main-slider {
@@ -559,7 +561,7 @@ ul.sub-menu {
 #home-slider .slider-hill {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -30px;
 }
 
 .animate-in .slider-hill {
@@ -580,8 +582,8 @@ ul.sub-menu {
 
 #home-slider .slider-sun {
   position: absolute;
-  right: 365px;
-  bottom: 100px;
+  right: 185px;
+  bottom: 230px;
 }
 
 .animate-in .slider-sun {
@@ -592,7 +594,7 @@ ul.sub-menu {
 #home-slider .slider-birds1 {
   position: absolute;
   right: 470px;
-  bottom: 75px;
+  bottom: 150px;
 }
 
 .animate-in .slider-birds1 {
@@ -603,7 +605,7 @@ ul.sub-menu {
 #home-slider .slider-birds2 {
   position: absolute;
   right: 40px;
-  bottom: 150px;
+  bottom: 320px;
 }
 
 .animate-in .slider-birds2 {
