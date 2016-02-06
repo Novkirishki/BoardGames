@@ -35,13 +35,13 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <h1><img src="images/logo.png" alt="logo"></h1>
                     </a>
 
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-left">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -72,8 +72,9 @@
     </header>
     <!--/#header-->
 
+    @RenderBody()
+
     <div class="container body-content">
-        @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

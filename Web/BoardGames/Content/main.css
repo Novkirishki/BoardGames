@@ -274,7 +274,8 @@
   margin-right: 20px;
 }
 
-#header .navbar-nav.navbar-right >li a {
+#header .navbar-nav.navbar-right >li a,
+#header .navbar-nav.navbar-left >li a {
   color: #000;
   font-size: 12px;
   padding: 20px;
@@ -286,6 +287,7 @@
 #header .navbar-inverse .navbar-nav  li.active > a,  
 #header .navbar-inverse .navbar-nav  li.active > a:focus, 
 #header .navbar-nav.navbar-right li > a:hover,
+#header .navbar-nav.navbar-left li > a:hover, 
 .navbar-inverse .navbar-nav > .open > a {
   background-color: inherit;
   border: 0;
