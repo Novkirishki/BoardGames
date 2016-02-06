@@ -3,18 +3,88 @@
         <div class="row">
             <div class="main-slider">
                 <div class="slide-text">
-                    <h1>We Are Creative Nerds</h1>
-                    <p>Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.</p>
-                    <a href="#" class="btn btn-common">SIGN UP</a>
+                    <h1>Welcome to Board Games Kingdom</h1>
+                    <p>This is a site where you can find all the information you need about your favourite board games. 
+                        Not only that but you can also find new games to spend your time on.
+                        There are many reviews, tutorials and events.
+                        Go get some fun!
+                    </p>
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <a href="#" class="btn btn-common">SIGN UP</a>
+                    }
                 </div>
-                <img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
-                <img src="images/home/slider/house.png" class="slider-house" alt="slider image">
-                <img src="images/home/slider/sun.png" class="slider-sun" alt="slider image">
-                <img src="images/home/slider/birds1.png" class="slider-birds1" alt="slider image">
-                <img src="images/home/slider/birds2.png" class="slider-birds2" alt="slider image">
+                <img src="~/images/home/slider/hill.png" class="slider-hill" alt="slider image">
+                <img src="~/images/home/slider/house.png" class="slider-house" alt="slider image">
+                <img src="~/images/home/slider/sun.png" class="slider-sun" alt="slider image">
+                <img src="~/images/home/slider/birds1.png" class="slider-birds1" alt="slider image">
+                <img src="~/images/home/slider/birds2.png" class="slider-birds2" alt="slider image">
             </div>
         </div>
     </div>
     <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
 </section>
 <!--/#home-slider-->
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="single-service">
+                    <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="~/images/home/icon1.jpg" alt="">
+                    </div>
+                    <h2>Experts reviews</h2>
+                    <p>A lot of reviews from game critics and experts about the games you love!</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="single-service">
+                    <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <img src="~/images/home/icon2.jpg" alt="">
+                    </div>
+                    <h2>Super tutorials</h2>
+                    <p>Games tutorials, tips and trics for begginers and advanced players. Made from the greatest.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                <div class="single-service">
+                    <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                        <img src="~/images/home/icon3.jpg" alt="">
+                    </div>
+                    <h2>Live events</h2>
+                    <p>Organized live game events where you can gather and exchange ideas, test your skills and have a great fun!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#services-->
+
+<section id="action">
+    <div class="vertical-center">
+        <div class="container">
+            <div class="row">
+                <div class="action count">
+                    <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <h1 class="timer bold" data-to="320" data-speed="3000" data-from="0"></h1>
+                        <h3>Happy Users</h3>
+                    </div>
+                    <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <h1 class="timer bold" data-to="1200" data-speed="3000" data-from="0"></h1>
+                        <h3>Total Reviews</h3>
+                    </div>
+                    <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <h1 class="timer bold" data-to="432" data-speed="3000" data-from="0"></h1>
+                        <h3>Total Tutorials</h3>
+                    </div>
+                    <div class="col-sm-3 text-center wow bounceIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <h1 class="timer bold" data-to="12" data-speed="3000" data-from="0"></h1>
+                        <h3>Total Events</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#action-->
