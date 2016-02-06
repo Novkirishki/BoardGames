@@ -236,6 +236,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Home\slider-bg.png" />
+    <Content Include="Images\Home\Slider\birds1.png" />
+    <Content Include="Images\Home\Slider\birds2.png" />
+    <Content Include="Images\Home\Slider\hill.png" />
+    <Content Include="Images\Home\Slider\house.png" />
+    <Content Include="Images\Home\Slider\sun.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
