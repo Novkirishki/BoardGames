@@ -14,6 +14,10 @@ namespace BoardGames
             bundles.Add(new ScriptBundle("~/bundles/jqueryCountTo").Include(
                         "~/Scripts/jquery.countTo.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/googleMaps").Include(
+                        "~/Scripts/gmaps.js",
+                        "~/Scripts/mapsApi.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
