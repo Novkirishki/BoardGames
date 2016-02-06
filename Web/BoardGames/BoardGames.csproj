@@ -245,6 +245,7 @@
     <Content Include="Images\Home\Slider\hill.png" />
     <Content Include="Images\Home\Slider\house.png" />
     <Content Include="Images\Home\Slider\sun.png" />
+    <Content Include="Images\Home\tour-bg.png" />
     <Content Include="Images\Home\under.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -271,6 +272,7 @@
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.countTo.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
