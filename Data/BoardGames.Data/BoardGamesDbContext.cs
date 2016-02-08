@@ -11,11 +11,13 @@
         {
         }
 
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Review> Reviews { get; set; }
+
         public static BoardGamesDbContext Create()
         {
             return new BoardGamesDbContext();
         }
-
-        public System.Data.Entity.DbSet<BoardGames.Data.Models.Category> Categories { get; set; }
     }
 }
