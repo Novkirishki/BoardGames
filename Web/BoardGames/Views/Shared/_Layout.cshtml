@@ -1,4 +1,4 @@
-﻿@model BoardGames.Models.MessageViewModel
+﻿@using BoardGames.Models
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,6 @@
     <title>@ViewBag.Title - Board Games Kingdom</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <header id="header">
@@ -44,18 +43,14 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" })</li>
+                        <li>@Html.ActionLink("About", "About", new { area = "", controller = "Home" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", new { area = "", controller = "Home" })</li>
                         <li class="dropdown">
-                            <a href="portfolio.html">Portfolio <i class="fa fa-angle-down"></i></a>
+                            <a href="~/Areas/Admin/Views/Home/Index.cshtml">Admin panel <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="portfolio.html">Portfolio Default</a></li>
-                                <li><a href="portfoliofour.html">Isotope 3 Columns + Right Sidebar</a></li>
-                                <li><a href="portfolioone.html">3 Columns + Right Sidebar</a></li>
-                                <li><a href="portfoliotwo.html">3 Columns + Left Sidebar</a></li>
-                                <li><a href="portfoliothree.html">2 Columns</a></li>
-                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                <li>@Html.ActionLink("Home", "Index", new { area = "Admin", controller = "Home" })</li>
+                                <li>@Html.ActionLink("Categories", "Index", new { area = "Admin", controller = "Categories" })</li>
                             </ul>
                         </li>
                     </ul>
@@ -122,29 +117,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">                
-                    <div class="contact-form bottom">
-                        <h2>Send a message</h2>
-                        @using (Ajax.BeginForm("SendMessage", "Contacts",null, new AjaxOptions {
-                            InsertionMode = InsertionMode.Replace,
-                            HttpMethod = "POST"
-                        }, new { @class = "form-horizontal", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name", required = "required" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", required = "required" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", placeholder = "Your text here", required = "required", rows = "8" })
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-submit" value="Submit" />
-                            </div>
-                        }
-                    </div>
+                    @Html.Partial("_MessagePartial", new MessageViewModel())
                 </div>
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">

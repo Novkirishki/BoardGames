@@ -1,0 +1,26 @@
+﻿@model BoardGames.Models.MessageViewModel
+
+<div class="contact-form bottom">
+    <h2>Send a message</h2>
+    @using (Ajax.BeginForm("SendMessage", "Contacts", null, new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name", required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Message, new { @class = "form-control", placeholder = "Your text here", required = "required", rows = "8" })
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-submit" value="Submit" />
+        </div>
+    }
+</div>

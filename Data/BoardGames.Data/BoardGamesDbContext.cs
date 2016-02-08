@@ -15,5 +15,7 @@
         {
             return new BoardGamesDbContext();
         }
+
+        public System.Data.Entity.DbSet<BoardGames.Data.Models.Category> Categories { get; set; }
     }
 }
