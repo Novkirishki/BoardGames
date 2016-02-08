@@ -538,7 +538,7 @@ ul.sub-menu {
 #home-slider {
   background: url(../images/home/slider-bg.png) 0 100% repeat-x;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 #home-slider .main-slider {
@@ -708,7 +708,7 @@ ul.sub-menu {
 
 .single-features {
   overflow: hidden;
-  padding-top: 65px;
+  padding-top: 35px;
   padding-bottom: 40px;
 }
 
@@ -717,7 +717,7 @@ ul.sub-menu {
 }
 
 .single-features:last-child {
-  padding-bottom: 95px;
+  padding-bottom: 35px;
   padding-top: 0;
 }
 

@@ -2,7 +2,7 @@
 
 <div class="contact-form bottom">
     <h2>Send a message</h2>
-    @using (Ajax.BeginForm("SendMessage", "Contacts", null, new AjaxOptions
+    @using (Ajax.BeginForm("SendMessage", "Contacts", new { area = "" }, new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "POST"
