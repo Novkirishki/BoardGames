@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model BoardGames.Models.MessageViewModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -80,7 +82,7 @@
                 <div class="col-sm-12 text-center bottom-separator">
                     <img src="~/images/home/under.png" class="img-responsive inline" alt="">
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 col-md-offset-1">
                     <div class="testimonial bottom">
                         <h2>Testimonial</h2>
                         <div class="media">
@@ -107,37 +109,41 @@
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
                         <address>
-                            E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
-                            Phone: +1 (123) 456 7890 <br>
-                            Fax: +1 (123) 456 7891 <br>
+                            E-mail: <a href="mailto:novkirishki94@gmail.com">novkirishki94@gmail.com</a> <br>
+                            Phone: +359 885763330 <br>
                         </address>
 
                         <h2>Address</h2>
                         <address>
-                            Unit C2, St.Vincent's Trading Est., <br>
-                            Feeder Road, <br>
-                            Bristol, BS2 0UY <br>
-                            United Kingdom <br>
+                            Ostri Vrah 2-B-14 <br>
+                            Vratsa, 3000 <br>
+                            Bulgaria <br>
                         </address>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12">                
                     <div class="contact-form bottom">
                         <h2>Send a message</h2>
-                        <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                        @using (Ajax.BeginForm("SendMessage", "Contacts",null, new AjaxOptions {
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "POST"
+                        }, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name", required = "required" })
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", required = "required" })
                             </div>
                             <div class="form-group">
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", placeholder = "Your text here", required = "required", rows = "8" })
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                                <input type="submit" class="btn btn-submit" value="Submit" />
                             </div>
-                        </form>
+                        }
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -153,6 +159,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 
     <script>
