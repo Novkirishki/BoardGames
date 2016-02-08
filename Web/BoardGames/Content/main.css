@@ -388,12 +388,12 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  padding-top: 30px;
   padding-bottom: 10px;
   background-image: url(../images/home/footer.png);
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: contain;
+  margin-top: 30px;
 }
 
 #footer h1{
@@ -750,6 +750,7 @@ ul.sub-menu {
 
 #action , 
 #page-breadcrumb{
+  margin-bottom: 30px;
   position: relative;
 }
 
