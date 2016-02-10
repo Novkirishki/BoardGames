@@ -5,6 +5,11 @@
 
     public class Review
     {
+        public Review()
+        {
+            this.CreatedOn = DateTime.UtcNow;
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -37,7 +42,7 @@
         [Required]
         public int CreatorId { get; set; }
 
-        public User Creator { get; set; }
+        public virtual User Creator { get; set; }
 
         [MaxLength(2083)]
         public string UrlToOfficialSite { get; set; }
