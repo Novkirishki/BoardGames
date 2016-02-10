@@ -1,6 +1,5 @@
 ﻿namespace BoardGames
 {
-    using App_Start;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -12,6 +11,7 @@
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
+            AutofacConfig.RegisterAutofac();
             DatabaseConfig.Initialize();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
