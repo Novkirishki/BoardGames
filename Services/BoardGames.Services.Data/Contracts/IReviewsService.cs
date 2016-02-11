@@ -18,5 +18,7 @@
         IQueryable<Review> GetLatest(int count);
 
         IQueryable<Review> GetByPageAndCategory(string category, int page);
+
+        int GetPagesCountByCategory(string category);
     }
 }

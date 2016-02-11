@@ -320,6 +320,7 @@
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Reviews\_LatestReviewsPartial.cshtml" />
     <Content Include="Areas\Public\Views\Reviews\_ReviewsPartial.cshtml" />
+    <Content Include="Areas\Public\Views\Reviews\_PaginationPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

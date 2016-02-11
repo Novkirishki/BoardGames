@@ -25,6 +25,7 @@
             model.Categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
             model.LatestReviews = this.reviews.GetLatest(3).To<ReviewMenuItemViewModel>().ToList();
             model.Reviews = this.reviews.GetByPageAndCategory(category, page).To<ReviewMenuItemViewModel>().ToList();
+            model.PagesCount = this.reviews.GetPagesCountByCategory(category);
             return View(model);
         }
     }

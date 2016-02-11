@@ -4,6 +4,7 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
+    using System;
 
     public class ReviewsService : IReviewsService
     {
@@ -82,6 +83,18 @@
         public IQueryable<Review> GetLatest(int count)
         {
             return this.reviews.All().OrderByDescending(r => r.CreatedOn).Take(count);
+        }
+
+        public int GetPagesCountByCategory(string category)
+        {
+            var result = this.reviews.All();
+
+            if (category != null)
+            {
+                result = result.Where(r => r.Category.Name == category);
+            }
+
+            return result.Count();
         }
     }
 }
