@@ -4,6 +4,7 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
+    using System;
 
     public class ReviewsService : IReviewsService
     {
@@ -62,6 +63,11 @@
         public Review GetById(int id)
         {
             return this.reviews.GetById(id);
+        }
+
+        public IQueryable<Review> GetLatest(int count)
+        {
+            return this.reviews.All().OrderByDescending(r => r.CreatedOn).Take(count);
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BoardGames.Areas.Public.Models.ReviewMenuItemViewModel>
+
+<div class="sidebar-item  recent">
+    <h3>Recent Reviews</h3>
+    @foreach (var item in Model)
+    {
+        <div class="media">
+            <div class="pull-left">
+                <a href="@Url.Action("Details", new { id = item.Id})"><img src="images/portfolio/project1.jpg" alt=""></a>
+            </div>
+            <div class="media-body">
+                <h4><a href="@Url.Action("Details", new { id = item.Id})">@item.GameTitle</a></h4>
+                <p>posted on  @item.CreatedOn.ToString("dd MMMM yyyy")</p>
+            </div>
+        </div>
+    }
+</div>

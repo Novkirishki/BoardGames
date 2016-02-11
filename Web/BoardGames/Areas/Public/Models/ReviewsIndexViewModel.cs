@@ -6,5 +6,7 @@
     public class ReviewsIndexViewModel
     {
         public IEnumerable<CategoryViewModel> Categories { get; set; }
+
+        public IEnumerable<ReviewMenuItemViewModel> LatestReviews { get; set; }
     }
 }

@@ -14,5 +14,7 @@
         void Delete(int id);
 
         Review GetById(int id);
+
+        IQueryable<Review> GetLatest(int count);
     }
 }

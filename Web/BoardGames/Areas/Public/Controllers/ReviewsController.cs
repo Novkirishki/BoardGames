@@ -23,6 +23,7 @@
         {
             var model = new ReviewsIndexViewModel();
             model.Categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            model.LatestReviews = this.reviews.GetLatest(3).To<ReviewMenuItemViewModel>().ToList();
             return View(model);
         }
     }
