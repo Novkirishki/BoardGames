@@ -7,11 +7,11 @@
         {
             if (Request.QueryString["category"] == item.Name)
             {
-                <li class="active"><a href="@Url.Action("Index", new { category = item.Name })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
+                <li class="active"><a href="@Url.Action("Index", new { category = item.Name, page = 1 })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
             }
             else
             {
-                <li><a href="@Url.Action("Index", new { category = item.Name })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
+                <li><a href="@Url.Action("Index", new { category = item.Name, page = 1 })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
             }
         }
     </ul>

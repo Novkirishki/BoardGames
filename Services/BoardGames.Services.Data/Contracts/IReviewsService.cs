@@ -16,5 +16,7 @@
         Review GetById(int id);
 
         IQueryable<Review> GetLatest(int count);
+
+        IQueryable<Review> GetByPageAndCategory(string category, int page);
     }
 }

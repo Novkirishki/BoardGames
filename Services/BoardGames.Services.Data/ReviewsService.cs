@@ -4,7 +4,6 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
-    using System;
 
     public class ReviewsService : IReviewsService
     {
@@ -63,6 +62,21 @@
         public Review GetById(int id)
         {
             return this.reviews.GetById(id);
+        }
+
+        public IQueryable<Review> GetByPageAndCategory(string category, int page)
+        {
+            var result = this.reviews.All();
+
+            if (category != null)
+            {
+                result = result.Where(r => r.Category.Name == category);
+            }
+
+            return result
+                .OrderByDescending(r => r.CreatedOn)
+                .Skip((page - 1) * 12)
+                .Take(12);
         }
 
         public IQueryable<Review> GetLatest(int count)

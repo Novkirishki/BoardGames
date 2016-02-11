@@ -19,11 +19,12 @@
         }
 
         // GET: Public/Reviews
-        public ActionResult Index()
+        public ActionResult Index(string category, int page)
         {
             var model = new ReviewsIndexViewModel();
             model.Categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
             model.LatestReviews = this.reviews.GetLatest(3).To<ReviewMenuItemViewModel>().ToList();
+            model.Reviews = this.reviews.GetByPageAndCategory(category, page).To<ReviewMenuItemViewModel>().ToList();
             return View(model);
         }
     }

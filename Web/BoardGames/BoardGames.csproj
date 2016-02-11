@@ -282,6 +282,8 @@
     <Content Include="Images\Home\tour-bg.png" />
     <Content Include="Images\Home\under.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\Paging\left.png" />
+    <Content Include="Images\Paging\right.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -317,6 +319,7 @@
     <Content Include="Areas\Public\Views\Reviews\Index.cshtml" />
     <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Public\Views\Reviews\_LatestReviewsPartial.cshtml" />
+    <Content Include="Areas\Public\Views\Reviews\_ReviewsPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
