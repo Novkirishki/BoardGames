@@ -1,21 +1,30 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Data.Entity;
     using System.Linq;
     using System.Net;
     using System.Web.Mvc;
-    using BoardGames.Data;
     using BoardGames.Data.Models;
     using Microsoft.AspNet.Identity;
+    using Services.Data.Contracts;
+    using Models;
+    using Web.Infrastructure.Mapping;
+
     public class ReviewsController : Controller
     {
-        private BoardGamesDbContext db = new BoardGamesDbContext();
+        private readonly IReviewsService reviews;
+        private readonly ICategoriesService categories;
+
+        public ReviewsController(IReviewsService reviews, ICategoriesService categories)
+        {
+            this.reviews = reviews;
+            this.categories = categories;
+        }
 
         // GET: Admin/Reviews
         public ActionResult Index()
         {
-            var reviews = db.Reviews.Include(r => r.Category);
-            return View(reviews.ToList());
+            var allReviews = this.reviews.GetAll().To<ReviewViewModel>().ToList();
+            return View(allReviews);
         }
 
         // GET: Admin/Reviews/Details/5
@@ -25,38 +34,49 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+
+            Review review = this.reviews.GetById((int)id);
             if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(review);
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<ReviewViewModel>(review);
+            return View(viewModel);
         }
 
         // GET: Admin/Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
+            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
             return View();
         }
 
         // POST: Admin/Reviews/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GameTitle,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,UrlToOfficialSite")] Review review)
+        public ActionResult Create(ReviewCreateViewModel model)
         {
-            review.CreatorId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
-                db.Reviews.Add(review);
-                db.SaveChanges();
+                this.reviews.Add(
+                    model.GameTitle,
+                    model.CategoryId,
+                    model.Content,
+                    model.MinPlayers,
+                    model.MaxPlayers,
+                    model.MinAgeRequired,
+                    model.MinPlayingTimeInMinutes,
+                    model.UrlToOfficialSite,
+                    User.Identity.GetUserId());
+
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", review.CategoryId);
-            return View(review);
+            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
+            return View(model);
         }
 
         // GET: Admin/Reviews/Edit/5
@@ -66,30 +86,44 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+
+            Review review = this.reviews.GetById((int)id);
             if (review == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", review.CategoryId);
-            return View(review);
+
+            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<ReviewCreateViewModel>(review);
+            return View(viewModel);
         }
 
         // POST: Admin/Reviews/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GameTitle,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,UrlToOfficialSite")] Review review)
+        public ActionResult Edit(ReviewCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(review).State = EntityState.Modified;
-                db.SaveChanges();
+                this.reviews.Edit(
+                    model.Id,
+                    model.GameTitle,
+                    model.CategoryId,
+                    model.Content,
+                    model.MinPlayers,
+                    model.MaxPlayers,
+                    model.MinAgeRequired,
+                    model.MinPlayingTimeInMinutes,
+                    model.UrlToOfficialSite);
+
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", review.CategoryId);
-            return View(review);
+
+            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
+            return View(model);
         }
 
         // GET: Admin/Reviews/Delete/5
@@ -99,12 +133,15 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+
+            Review review = this.reviews.GetById((int)id);
             if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(review);
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<ReviewViewModel>(review);
+            return View(viewModel);
         }
 
         // POST: Admin/Reviews/Delete/5
@@ -112,19 +149,8 @@
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Review review = db.Reviews.Find(id);
-            db.Reviews.Remove(review);
-            db.SaveChanges();
+            this.reviews.Delete(id);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
     <Compile Include="Contracts\ICategoriesService.cs" />
+    <Compile Include="Contracts\IReviewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\BoardGames.Data.Common\BoardGames.Data.Common.csproj">

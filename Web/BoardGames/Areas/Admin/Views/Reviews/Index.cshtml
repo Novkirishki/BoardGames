@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BoardGames.Data.Models.Review>
+﻿@model IEnumerable<BoardGames.Areas.Admin.Models.ReviewViewModel>
 
 @{
     ViewBag.Title = "Reviews";
@@ -17,7 +17,7 @@
             Game Title
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedOn)
+            Created
         </th>
         <th>
             Players
@@ -40,7 +40,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
+            @Html.DisplayFor(modelItem => item.Category)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GameTitle)
@@ -59,7 +59,7 @@
             @Html.DisplayFor(modelItem => item.MinPlayingTimeInMinutes)+
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Creator.UserName)
+            @Html.DisplayFor(modelItem => item.Creator)
         </td>
         <td>
             <a href="@Html.DisplayFor(modelItem => item.UrlToOfficialSite)">site</a>

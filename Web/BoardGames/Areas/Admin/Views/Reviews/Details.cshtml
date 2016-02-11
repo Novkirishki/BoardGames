@@ -1,4 +1,4 @@
-﻿@model BoardGames.Data.Models.Review
+﻿@model BoardGames.Areas.Admin.Models.ReviewViewModel
 
 @{
     ViewBag.Title = "Reviews";
@@ -14,7 +14,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Category.Name)
+            @Html.DisplayFor(model => model.Category)
         </dd>
 
         <dt>
@@ -70,7 +70,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Creator.UserName)
+            @Html.DisplayFor(model => model.Creator)
         </dd>
 
         <dt>
