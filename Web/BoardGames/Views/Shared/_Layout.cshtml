@@ -44,8 +44,8 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li>@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" })</li>
-                        <li>@Html.ActionLink("About", "About", new { area = "", controller = "Home" })</li>
                         <li>@Html.ActionLink("Contact", "Contact", new { area = "", controller = "Home" })</li>
+                        <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews" })</li>
                         <li class="dropdown">
                             <a href="~/Admin/Home">Admin panel <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
@@ -117,7 +117,7 @@
                         </address>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">                
+                <div class="col-md-4 col-sm-12">
                     @Html.Partial("_MessagePartial", new MessageViewModel())
                 </div>
                 <div class="col-sm-12">

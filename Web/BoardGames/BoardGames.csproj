@@ -231,6 +231,8 @@
     <Compile Include="Areas\Admin\Models\CategoryViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewCreateViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewViewModel.cs" />
+    <Compile Include="Areas\Public\Controllers\ReviewsController.cs" />
+    <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -303,13 +305,15 @@
     <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Index.cshtml" />
+    <Content Include="Areas\Public\Views\web.config" />
+    <Content Include="Areas\Public\Views\Reviews\Index.cshtml" />
+    <Content Include="Areas\Public\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -338,7 +342,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -362,9 +365,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_MessagePartial.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumpsLayout.cshtml" />
+    <Content Include="Areas\Public\Views\Reviews\_CategoriesMenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Public\Models\" />
+    <Folder Include="Areas\Public\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
