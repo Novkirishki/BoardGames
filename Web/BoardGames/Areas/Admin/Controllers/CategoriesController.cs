@@ -4,9 +4,9 @@
     using System.Web.Mvc;
     using BoardGames.Data.Models;
     using Services.Data.Contracts;
-    using Models;
     using Web.Infrastructure.Mapping;
     using System.Linq;
+    using BoardGames.Models;
 
     public class CategoriesController : Controller
     {

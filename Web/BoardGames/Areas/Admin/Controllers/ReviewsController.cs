@@ -8,6 +8,7 @@
     using Services.Data.Contracts;
     using Models;
     using Web.Infrastructure.Mapping;
+    using BoardGames.Models;
 
     public class ReviewsController : Controller
     {

@@ -1,1 +1,18 @@
-﻿
+﻿@model IEnumerable<BoardGames.Models.CategoryViewModel>
+
+<div class="sidebar-item categories">
+    <h3>Game Categories</h3>
+    <ul class="nav navbar-stacked">
+        @foreach (var item in Model)
+        {
+            if (Request.QueryString["category"] == item.Name)
+            {
+                <li class="active"><a href="@Url.Action("Index", new { category = item.Name })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
+            }
+            else
+            {
+                <li><a href="@Url.Action("Index", new { category = item.Name })">@item.Name <span class="pull-right">(@item.NumberOfReviews)</span></a></li>
+            }
+        }
+    </ul>
+</div>
