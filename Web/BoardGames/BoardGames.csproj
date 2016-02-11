@@ -52,6 +52,10 @@
       <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
       <Private>True</Private>
@@ -224,6 +228,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
+    <Compile Include="Areas\Admin\Models\CategoryViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -358,7 +363,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -378,6 +382,14 @@
     <ProjectReference Include="..\..\Data\BoardGames.Data\BoardGames.Data.csproj">
       <Project>{a74cc6b3-e1d1-4264-9d81-0b72f45ee7c5}</Project>
       <Name>BoardGames.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\BoardGames.Services.Data\BoardGames.Services.Data.csproj">
+      <Project>{3eb3a199-4b96-4e6b-8f85-bb05600fa478}</Project>
+      <Name>BoardGames.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoardGames.Web.Infrastructure\BoardGames.Web.Infrastructure.csproj">
+      <Project>{fb28c9c2-6c64-49d3-900d-2fd9ea8f9ef7}</Project>
+      <Name>BoardGames.Web.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

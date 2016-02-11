@@ -7,6 +7,8 @@
     using Autofac;
     using Autofac.Integration.Mvc;
     using Data;
+    using Data.Common;
+    using Services.Data.Contracts;
 
     public static class AutofacConfig
     {
@@ -42,6 +44,13 @@
         {
             builder.Register<BoardGamesDbContext>(x => new BoardGamesDbContext())
                 .As<DbContext>()
+                .InstancePerRequest();
+
+            var servicesAssembly = Assembly.GetAssembly(typeof(ICategoriesService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+
+            builder.RegisterGeneric(typeof(DbRepository<>)).
+                As(typeof(IDbRepository<>))
                 .InstancePerRequest();
         }
     }

@@ -1,10 +1,11 @@
 ﻿namespace BoardGames.Web.Infrastructure.Mapping
 {
+    using AutoMapper;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    
+
     public class AutoMapperConfig
     {
         public static MapperConfiguration Configuration { get; private set; }

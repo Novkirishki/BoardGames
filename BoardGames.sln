@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Data.Models", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Data.Common", "Data\BoardGames.Data.Common\BoardGames.Data.Common.csproj", "{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Web.Infrastructure", "Web\BoardGames.Web.Infrastructure\BoardGames.Web.Infrastructure.csproj", "{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{35E5F7C8-A872-4E09-821E-1EDD1C36F66F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Services.Data", "Services\BoardGames.Services.Data\BoardGames.Services.Data.csproj", "{3EB3A199-4B96-4E6B-8F85-BB05600FA478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +43,14 @@ Global
 		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +60,7 @@ Global
 		{A74CC6B3-E1D1-4264-9D81-0B72F45EE7C5} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
 		{2756F119-E8C2-44EE-B9B4-3EDF7718B83A} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
 		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
+		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7} = {930E7274-2138-413C-B883-869787195F4A}
+		{3EB3A199-4B96-4E6B-8F85-BB05600FA478} = {35E5F7C8-A872-4E09-821E-1EDD1C36F66F}
 	EndGlobalSection
 EndGlobal

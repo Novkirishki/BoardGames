@@ -1,20 +1,27 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Data.Entity;
-    using System.Linq;
     using System.Net;
     using System.Web.Mvc;
-    using BoardGames.Data;
     using BoardGames.Data.Models;
+    using Services.Data.Contracts;
+    using Models;
+    using Web.Infrastructure.Mapping;
+    using System.Linq;
 
     public class CategoriesController : Controller
     {
-        private BoardGamesDbContext db = new BoardGamesDbContext();
+        private readonly ICategoriesService categories;
+
+        public CategoriesController(ICategoriesService categories)
+        {
+            this.categories = categories;
+        }
 
         // GET: Admin/Categories
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            var allCategories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            return View(allCategories);
         }
 
         // GET: Admin/Categories/Details/5
@@ -24,12 +31,15 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+
+            Category category = this.categories.GetById((int)id);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
+            return View(viewModel);
         }
 
         // GET: Admin/Categories/Create
@@ -39,20 +49,17 @@
         }
 
         // POST: Admin/Categories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Category category)
+        public ActionResult Create(CategoryViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
+                this.categories.Add(model.Name);
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            return View(model);
         }
 
         // GET: Admin/Categories/Edit/5
@@ -62,28 +69,29 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+
+            Category category = this.categories.GetById((int)id);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
+            return View(viewModel);
         }
 
         // POST: Admin/Categories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Category category)
+        public ActionResult Edit(CategoryViewModel model, int id)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                this.categories.Edit(id, model.Name);
                 return RedirectToAction("Index");
             }
-            return View(category);
+
+            return View(model);
         }
 
         // GET: Admin/Categories/Delete/5
@@ -93,12 +101,15 @@
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+
+            Category category = this.categories.GetById((int)id);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
+            return View(viewModel);
         }
 
         // POST: Admin/Categories/Delete/5
@@ -106,19 +117,8 @@
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            this.categories.Delete(id);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
