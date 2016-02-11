@@ -6,7 +6,7 @@
     using System.Web.Mvc;
     using BoardGames.Data;
     using BoardGames.Data.Models;
-
+    using Microsoft.AspNet.Identity;
     public class ReviewsController : Controller
     {
         private BoardGamesDbContext db = new BoardGamesDbContext();
@@ -45,8 +45,9 @@
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,GameTitle,CreatedOn,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,CreatorId,UrlToOfficialSite")] Review review)
+        public ActionResult Create([Bind(Include = "GameTitle,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,UrlToOfficialSite")] Review review)
         {
+            review.CreatorId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Reviews.Add(review);
@@ -79,7 +80,7 @@
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,GameTitle,CreatedOn,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,CreatorId,UrlToOfficialSite")] Review review)
+        public ActionResult Edit([Bind(Include = "GameTitle,CategoryId,Content,MinPlayers,MaxPlayers,MinAgeRequired,MinPlayingTimeInMinutes,UrlToOfficialSite")] Review review)
         {
             if (ModelState.IsValid)
             {

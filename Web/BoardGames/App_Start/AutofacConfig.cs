@@ -6,6 +6,7 @@
 
     using Autofac;
     using Autofac.Integration.Mvc;
+    using Data;
 
     public static class AutofacConfig
     {
@@ -39,6 +40,9 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
+            builder.Register<BoardGamesDbContext>(x => new BoardGamesDbContext())
+                .As<DbContext>()
+                .InstancePerRequest();
         }
     }
 }

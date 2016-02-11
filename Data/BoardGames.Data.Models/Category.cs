@@ -1,9 +1,10 @@
 ﻿namespace BoardGames.Data.Models
 {
+    using Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Category
+    public class Category : BaseModel<int>
     {
         private ICollection<Review> reviews;
 
@@ -11,8 +12,6 @@
         {
             this.Reviews = new HashSet<Review>();
         }
-
-        public int Id { get; set; }
 
         [Required]
         [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]

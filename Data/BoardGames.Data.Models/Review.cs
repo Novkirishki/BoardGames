@@ -1,23 +1,13 @@
 ﻿namespace BoardGames.Data.Models
 {
-    using System;
+    using Common.Models;
     using System.ComponentModel.DataAnnotations;
 
-    public class Review
+    public class Review : BaseModel<int>
     {
-        public Review()
-        {
-            this.CreatedOn = DateTime.UtcNow;
-        }
-
-        public int Id { get; set; }
-
         [Required]
         [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         public string GameTitle { get; set; }
-
-        [Required]
-        public DateTime CreatedOn { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
@@ -40,7 +30,7 @@
         public int MinPlayingTimeInMinutes { get; set; }
 
         [Required]
-        public int CreatorId { get; set; }
+        public string CreatorId { get; set; }
 
         public virtual User Creator { get; set; }
 

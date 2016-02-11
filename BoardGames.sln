@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Data", "Data\Boa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Data.Models", "Data\BoardGames.Data.Models\BoardGames.Data.Models.csproj", "{2756F119-E8C2-44EE-B9B4-3EDF7718B83A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Data.Common", "Data\BoardGames.Data.Common\BoardGames.Data.Common.csproj", "{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{2756F119-E8C2-44EE-B9B4-3EDF7718B83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2756F119-E8C2-44EE-B9B4-3EDF7718B83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2756F119-E8C2-44EE-B9B4-3EDF7718B83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{E1C8641D-4E45-4BDD-9027-6F4C0859AA30} = {930E7274-2138-413C-B883-869787195F4A}
 		{A74CC6B3-E1D1-4264-9D81-0B72F45EE7C5} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
 		{2756F119-E8C2-44EE-B9B4-3EDF7718B83A} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
+		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
 	EndGlobalSection
 EndGlobal
