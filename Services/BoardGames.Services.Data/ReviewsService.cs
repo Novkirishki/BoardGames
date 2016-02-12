@@ -109,7 +109,7 @@
                 result = result.Where(r => r.Category.Name == category);
             }
 
-            return result.Count();
+            return (result.Count() + 5) / 12;
         }
     }
 }
