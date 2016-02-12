@@ -1,9 +1,12 @@
 ﻿namespace BoardGames.Areas.Public.Controllers
 {
+    using Admin.Models;
     using BoardGames.Models;
+    using Data.Models;
     using Models;
     using Services.Data.Contracts;
     using System.Linq;
+    using System.Net;
     using System.Web.Mvc;
     using Web.Infrastructure.Mapping;
 
@@ -27,6 +30,24 @@
             model.Reviews = this.reviews.GetByPageAndCategory(category, page).To<ReviewMenuItemViewModel>().ToList();
             model.PagesCount = this.reviews.GetPagesCountByCategory(category);
             return View(model);
+        }
+
+        // GET: Public/Reviews
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Review review = this.reviews.GetById((int)id);
+            if (review == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<ReviewViewModel>(review);
+            return View(viewModel);
         }
     }
 }

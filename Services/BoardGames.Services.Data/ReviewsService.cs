@@ -4,8 +4,7 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
-    using System;
-    using System.IO;
+
     public class ReviewsService : IReviewsService
     {
         private readonly IDbRepository<Review> reviews;
