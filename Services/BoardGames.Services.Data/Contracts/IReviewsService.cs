@@ -7,9 +7,9 @@
     {
         IQueryable<Review> GetAll();
 
-        void Add(string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, string creatorId);
+        void Add(string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, string creatorId, int? imageId = null);
 
-        void Edit(int id, string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl);
+        void Edit(int id, string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, int? imageId = null);
 
         void Delete(int id);
 

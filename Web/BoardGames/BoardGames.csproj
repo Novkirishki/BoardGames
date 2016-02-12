@@ -230,6 +230,7 @@
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewCreateViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewViewModel.cs" />
@@ -269,6 +270,7 @@
     <Content Include="Images\Admin\reviews.jpg" />
     <Content Include="Images\Admin\tutorials.jpg" />
     <Content Include="Images\Admin\users.jpg" />
+    <Content Include="Images\review_default.png" />
     <Content Include="Images\Home\footer.png" />
     <Content Include="Images\Home\icon2.jpg" />
     <Content Include="Images\Home\icon3.jpg" />
@@ -377,7 +379,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Public\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

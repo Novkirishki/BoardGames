@@ -9,16 +9,19 @@
     using Models;
     using Web.Infrastructure.Mapping;
     using BoardGames.Models;
+    using System.Web;
 
     public class ReviewsController : Controller
     {
         private readonly IReviewsService reviews;
         private readonly ICategoriesService categories;
+        private readonly IFilesService files;
 
-        public ReviewsController(IReviewsService reviews, ICategoriesService categories)
+        public ReviewsController(IReviewsService reviews, ICategoriesService categories, IFilesService files)
         {
             this.reviews = reviews;
             this.categories = categories;
+            this.files = files;
         }
 
         // GET: Admin/Reviews
@@ -57,10 +60,24 @@
         // POST: Admin/Reviews/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ReviewCreateViewModel model)
+        public ActionResult Create(ReviewCreateViewModel model, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                int? imageId = null;
+
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    var imageType = upload.ContentType;
+                    byte[] content = null;
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        content = reader.ReadBytes(upload.ContentLength);
+                    }
+
+                    imageId = this.files.Add(imageType, content);
+                }
+
                 this.reviews.Add(
                     model.GameTitle,
                     model.CategoryId,
@@ -70,7 +87,8 @@
                     model.MinAgeRequired,
                     model.MinPlayingTimeInMinutes,
                     model.UrlToOfficialSite,
-                    User.Identity.GetUserId());
+                    User.Identity.GetUserId(),
+                    imageId);
 
                 return RedirectToAction("Index");
             }
@@ -104,10 +122,24 @@
         // POST: Admin/Reviews/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ReviewCreateViewModel model)
+        public ActionResult Edit(ReviewCreateViewModel model, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                int? imageId = null;
+
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    var imageType = upload.ContentType;
+                    byte[] content = null;
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        content = reader.ReadBytes(upload.ContentLength);
+                    }
+
+                    imageId = this.files.Add(imageType, content);
+                }
+
                 this.reviews.Edit(
                     model.Id,
                     model.GameTitle,
@@ -117,7 +149,8 @@
                     model.MaxPlayers,
                     model.MinAgeRequired,
                     model.MinPlayingTimeInMinutes,
-                    model.UrlToOfficialSite);
+                    model.UrlToOfficialSite,
+                    imageId);
 
                 return RedirectToAction("Index");
             }

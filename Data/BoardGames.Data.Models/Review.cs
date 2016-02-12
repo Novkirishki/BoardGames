@@ -36,5 +36,9 @@
 
         [MaxLength(2083)]
         public string UrlToOfficialSite { get; set; }
+
+        public int ImageId { get; set; }
+
+        public virtual File Image { get; set; }
     }
 }

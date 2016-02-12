@@ -11,5 +11,7 @@
         public string GameTitle { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public int ImageId { get; set; }
     }
 }

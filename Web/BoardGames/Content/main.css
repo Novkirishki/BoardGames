@@ -977,6 +977,11 @@ h3.top-zero{
   padding-bottom: 50px;
 }
 
+.recent-projects img{
+    width: 52px;
+    height: 52px;
+}
+
 .choose{
   padding-top: 30px;
 }
@@ -2727,4 +2732,9 @@ span.stButton_gradient,
   -webkit-box-shadow: 0 0 0 5px rgba(0,0,0,.1) inset;
   border-radius: 100%;
   margin: 10px 0;
+}
+
+dd img{
+    width: 320px;
+    height: auto;
 }

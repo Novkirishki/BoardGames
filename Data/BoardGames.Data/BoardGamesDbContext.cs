@@ -18,6 +18,8 @@
 
         public IDbSet<Review> Reviews { get; set; }
 
+        public IDbSet<File> Files { get; set; }
+
         public static BoardGamesDbContext Create()
         {
             return new BoardGamesDbContext();

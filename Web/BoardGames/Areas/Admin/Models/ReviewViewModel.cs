@@ -5,7 +5,7 @@
     using Web.Infrastructure.Mapping;
     using AutoMapper;
     using System;
-
+    using System.IO;
     public class ReviewViewModel : IMapFrom<Review>, IHaveCustomMappings
     {
         public int Id { get; set; }
@@ -37,6 +37,8 @@
         public string UrlToOfficialSite { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public int ImageId { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

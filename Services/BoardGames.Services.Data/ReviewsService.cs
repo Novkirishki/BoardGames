@@ -5,7 +5,7 @@
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
     using System;
-
+    using System.IO;
     public class ReviewsService : IReviewsService
     {
         private readonly IDbRepository<Review> reviews;
@@ -15,7 +15,7 @@
             this.reviews = reviews;
         }
 
-        public void Add(string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, string creatorId)
+        public void Add(string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, string creatorId, int? imageId = null)
         {
             var newReview = new Review
             {
@@ -30,6 +30,15 @@
                 CreatorId = creatorId
             };
 
+            if (imageId != null)
+            {
+                newReview.ImageId = (int)imageId;
+            }
+            else
+            {
+                newReview.ImageId = 1;
+            }
+
             this.reviews.Add(newReview);
             this.reviews.Save();
         }
@@ -41,7 +50,7 @@
             this.reviews.Save();
         }
 
-        public void Edit(int id, string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl)
+        public void Edit(int id, string gameTitle, int categoryId, string content, int minPlayers, int maxPlayers, int minAge, int minTime, string siteUrl, int? imageId = null)
         {
             var reviewToBeEdited = this.reviews.GetById(id);
             reviewToBeEdited.GameTitle = gameTitle;
@@ -52,6 +61,12 @@
             reviewToBeEdited.MinAgeRequired = minAge;
             reviewToBeEdited.MinPlayingTimeInMinutes = minTime;
             reviewToBeEdited.UrlToOfficialSite = siteUrl;
+
+            if (imageId != null)
+            {
+                reviewToBeEdited.ImageId = (int)imageId;
+            }
+
             this.reviews.Save();
         }
 
