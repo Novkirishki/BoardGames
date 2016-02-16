@@ -2738,3 +2738,9 @@ dd img{
     width: 320px;
     height: auto;
 }
+
+.fa {
+    padding-right: 8px;
+    color: #C03035;   
+    margin-left: 15px;
+}
