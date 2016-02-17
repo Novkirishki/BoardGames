@@ -20,10 +20,9 @@ namespace BoardGames
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                        "~/Scripts/KendoUI/kendo.all.min.js",
+                        "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
@@ -40,6 +39,10 @@ namespace BoardGames
                       "~/Content/lightbox.css",
                       "~/Content/main.css",
                       "~/Content/responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+                      "~/Content/KendoUI/kendo.common.min.css",
+                      "~/Content/KendoUI/kendo.default.min.css"));
         }
     }
 }

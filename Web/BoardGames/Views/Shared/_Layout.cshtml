@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Board Games Kingdom</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo")
 </head>
 <body>
     <header id="header">
@@ -45,7 +45,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" })</li>
                         <li>@Html.ActionLink("Contact", "Contact", new { area = "", controller = "Home" })</li>
-                        <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1})</li>
+                        <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1 })</li>
                         <li class="dropdown">
                             <a href="~/Admin/Home">Admin panel <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
@@ -133,6 +133,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 
