@@ -1,15 +1,12 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Data.Entity;
     using System.Web.Mvc;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using BoardGames.Data.Models;
     using Services.Data.Contracts;
     using Models;
     using Web.Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
-    using System.Web;
 
     public class TutorialsController : Controller
     {

@@ -14,7 +14,7 @@
           columns.Bound(c => c.Game);
           columns.Bound(c => c.Author);
           columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
-          columns.Bound(c => c.ImageId);
+          columns.Bound(c => c.ImageId).ClientTemplate("<img class='kendo-grid-img' src='/Files?id=#:data.ImageId#'/>").Title("Image");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
       })
       .ToolBar(toolbar => {

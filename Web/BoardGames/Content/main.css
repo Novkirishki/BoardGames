@@ -2748,3 +2748,10 @@ dd img{
     color: #C03035;   
     margin-left: 15px;
 }
+
+.kendo-grid-img {
+    display: block;
+    margin: auto;
+    width: 70px;
+    height: auto;
+}
