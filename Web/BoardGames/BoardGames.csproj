@@ -231,7 +231,8 @@
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
-    <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
     <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
@@ -327,6 +328,10 @@
     <Content Include="Images\Admin\reviews.jpg" />
     <Content Include="Images\Admin\tutorials.jpg" />
     <Content Include="Images\Admin\users.jpg" />
+    <Content Include="Images\lightbox\close.png" />
+    <Content Include="Images\lightbox\loading.gif" />
+    <Content Include="Images\lightbox\next.png" />
+    <Content Include="Images\lightbox\prev.png" />
     <Content Include="Images\review_default.png" />
     <Content Include="Images\Home\footer.png" />
     <Content Include="Images\Home\icon2.jpg" />
@@ -383,7 +388,6 @@
     <Content Include="Areas\Public\Views\Reviews\Details.cshtml" />
     <Content Include="Areas\Private\Views\web.config" />
     <Content Include="Areas\Private\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Private\Views\Tutorials\Index.cshtml" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -402,6 +406,8 @@
     <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
+    <Content Include="Areas\Admin\Views\Tutorials\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\TutorialViewModel.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -460,6 +466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Private\Controllers\" />
     <Folder Include="Areas\Private\Models\" />
     <Folder Include="Areas\Private\Views\Shared\" />
   </ItemGroup>

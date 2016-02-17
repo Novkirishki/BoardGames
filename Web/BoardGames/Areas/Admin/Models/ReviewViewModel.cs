@@ -5,7 +5,7 @@
     using Web.Infrastructure.Mapping;
     using AutoMapper;
     using System;
-    using System.IO;
+
     public class ReviewViewModel : IMapFrom<Review>, IHaveCustomMappings
     {
         public int Id { get; set; }
