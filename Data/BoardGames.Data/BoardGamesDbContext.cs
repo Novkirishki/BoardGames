@@ -20,6 +20,14 @@
 
         public IDbSet<File> Files { get; set; }
 
+        public IDbSet<Tutorial> Tutorials { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<Like> Likes { get; set; }
+
+        public IDbSet<Reply> Replies { get; set; }
+
         public static BoardGamesDbContext Create()
         {
             return new BoardGamesDbContext();
@@ -50,6 +58,24 @@
                     entity.ModifiedOn = DateTime.Now;
                 }
             }
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder
+                .Entity<Reply>()
+                .HasRequired(r => r.Author)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+
+            modelBuilder
+                .Entity<Comment>()
+                .HasRequired(r => r.Author)
+                .WithMany()
+                .WillCascadeOnDelete(false);
         }
     }
 }
