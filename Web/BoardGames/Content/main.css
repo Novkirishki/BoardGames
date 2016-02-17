@@ -388,12 +388,12 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  padding-top: 30px;
   padding-bottom: 10px;
   background-image: url(../images/home/footer.png);
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: contain;
+  margin-top: 30px;
 }
 
 #footer h1{
@@ -538,7 +538,7 @@ ul.sub-menu {
 #home-slider {
   background: url(../images/home/slider-bg.png) 0 100% repeat-x;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 #home-slider .main-slider {
@@ -708,7 +708,7 @@ ul.sub-menu {
 
 .single-features {
   overflow: hidden;
-  padding-top: 65px;
+  padding-top: 35px;
   padding-bottom: 40px;
 }
 
@@ -717,7 +717,7 @@ ul.sub-menu {
 }
 
 .single-features:last-child {
-  padding-bottom: 95px;
+  padding-bottom: 35px;
   padding-top: 0;
 }
 
@@ -750,6 +750,7 @@ ul.sub-menu {
 
 #action , 
 #page-breadcrumb{
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -976,6 +977,11 @@ h3.top-zero{
   padding-bottom: 50px;
 }
 
+.recent-projects img{
+    width: 52px;
+    height: 52px;
+}
+
 .choose{
   padding-top: 30px;
 }
@@ -1157,7 +1163,7 @@ ul.elements li > i{
 }
 
 .pagination li:first-child a{
-  background: url(../images/portfolio/left.png);
+  background: url(../images/Paging/left.png);
   background-repeat: no-repeat;
   text-indent: -999999999px;
   background-position: center top 10px;
@@ -1171,7 +1177,7 @@ ul.elements li > i{
 }
 
 .pagination li:first-child a:hover{
-  background: url(../images/portfolio/left.png);
+  background: url(../images/Paging/left.png);
   background-position: center top -37px;
   background-repeat: no-repeat;
   -webkit-transition: 300ms;
@@ -1181,7 +1187,7 @@ ul.elements li > i{
 }
 
 .pagination li:last-child a{
-  background: url(../images/portfolio/right.png);
+  background: url(../images/Paging/right.png);
   background-repeat: no-repeat;
   text-indent: -999999999px;
   background-position: center top 10px;
@@ -1195,7 +1201,7 @@ ul.elements li > i{
 }
 
 .pagination li:last-child a:hover{
-  background: url(../images/portfolio/right.png);
+  background: url(../images/Paging/right.png);
   background-position: center top -37px;
   background-repeat: no-repeat;
   -webkit-transition: 300ms;
@@ -2726,4 +2732,19 @@ span.stButton_gradient,
   -webkit-box-shadow: 0 0 0 5px rgba(0,0,0,.1) inset;
   border-radius: 100%;
   margin: 10px 0;
+}
+
+dd img{
+    width: 320px;
+    height: auto;
+}
+
+.fa-calendar,
+.fa-users,
+.fa-child,
+.fa-clock-o,
+.fa-tag {
+    padding-right: 8px;
+    color: #C03035;   
+    margin-left: 15px;
 }

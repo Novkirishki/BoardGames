@@ -1,0 +1,28 @@
+﻿@model BoardGames.Areas.Public.Models.ReviewsIndexViewModel
+
+@{
+    ViewBag.Title = "Game reviews";
+    ViewBag.Subtitle = "Find the right game";
+}
+
+<section id="projects" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="sidebar portfolio-sidebar">
+                    @Html.Partial("_CategoriesMenuPartial", Model.Categories)
+                    @Html.Partial("_LatestReviewsPartial", Model.LatestReviews)
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-8">
+                <div class="row">
+                    @Html.Partial("_ReviewsPartial", Model.Reviews)
+                </div>
+                <div class="row">
+                    @Html.Partial("_PaginationPartial", Model.PagesCount)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#projects-->

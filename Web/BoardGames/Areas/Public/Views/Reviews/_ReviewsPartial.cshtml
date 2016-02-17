@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BoardGames.Areas.Public.Models.ReviewMenuItemViewModel>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item branded logos">
+        <div class="portfolio-wrapper">
+            <div class="portfolio-single">
+                <div class="portfolio-thumb">
+                    <img src="~/Files?id=@item.ImageId" alt="avatar" class="img-responsive" />
+                </div>
+                <div class="portfolio-view">
+                    <ul class="nav nav-pills">
+                        <li><a href="@Url.Action("Details", new { id = item.Id})"><i class="fa fa-link"></i></a></li>
+                        <li><a href="~/Files?id=@item.ImageId" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="portfolio-info ">
+                <h2>@item.GameTitle</h2>
+            </div>
+        </div>
+    </div>
+}

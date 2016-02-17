@@ -1,4 +1,4 @@
-﻿namespace BoardGames.App_Start
+﻿namespace BoardGames
 {
     using BoardGames.Data;
     using BoardGames.Data.Migrations;
