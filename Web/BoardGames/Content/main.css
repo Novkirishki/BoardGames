@@ -2739,7 +2739,11 @@ dd img{
     height: auto;
 }
 
-.fa {
+.fa-calendar,
+.fa-users,
+.fa-child,
+.fa-clock-o,
+.fa-tag {
     padding-right: 8px;
     color: #C03035;   
     margin-left: 15px;
