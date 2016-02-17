@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using System;
-
+    using System.Web.Mvc;
     public class TutorialViewModel : IMapFrom<Tutorial>, IHaveCustomMappings
     {
         public int Id { get; set; }
@@ -15,6 +15,9 @@
         public string Title { get; set; }
 
         [Required]
+        [AllowHtml]
+        [DataType("TinyMCE")]
+        [UIHint("TinyMCE")]
         public string Content { get; set; }
 
         [Required]

@@ -15,6 +15,10 @@
 
         public ActionResult Index(int id)
         {
+            if (id == 0)
+            {
+                return null;
+            }
             var fileToRetrieve = files.GetById(id);
             return File(fileToRetrieve.Content, fileToRetrieve.ContentType);
         }
