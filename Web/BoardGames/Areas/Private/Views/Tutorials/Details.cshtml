@@ -1,0 +1,25 @@
+﻿@model BoardGames.Areas.Private.Models.TutorialDetailsPageViewModel
+
+@{
+    ViewBag.Title = "Tutorial details";
+    ViewBag.Subtitle = "All you need to know";
+}
+
+<section id="blog-details" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                    @Html.Partial("_TutorialDetailsPartial", Model.Tutorial)
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-5">
+                <div class="sidebar blog-sidebar">
+                    @Html.Partial("_BestTutorialsMenuPartial", Model.BestTutorials)
+                    @Html.Partial("_RandomTutorialsMenuPartial", Model.RandomTutorials)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#blog-->

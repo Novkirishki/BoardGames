@@ -235,6 +235,7 @@
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Private\Models\TutorialBestMenuViewModel.cs" />
+    <Compile Include="Areas\Private\Models\TutorialDetailsPageViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialRandomMenuViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialsIndexViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialListedViewModel.cs" />
@@ -419,6 +420,8 @@
     <Content Include="Areas\Private\Views\Tutorials\_RandomTutorialsMenuPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_ListetTutorialsPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_TutorialsPaginationPartial.cshtml" />
+    <Content Include="Areas\Private\Views\Tutorials\Details.cshtml" />
+    <Content Include="Areas\Private\Views\Tutorials\_TutorialDetailsPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
