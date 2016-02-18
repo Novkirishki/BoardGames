@@ -14,5 +14,6 @@
         void Delete(int id);
 
         Tutorial GetById(int id);
+        IQueryable<Tutorial> GetBest(int count = 5);
     }
 }

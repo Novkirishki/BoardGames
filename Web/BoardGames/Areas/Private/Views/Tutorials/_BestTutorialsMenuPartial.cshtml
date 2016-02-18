@@ -1,17 +1,17 @@
-﻿@{
-    Layout = null;
-}
+﻿@model IEnumerable<BoardGames.Areas.Private.Models.TutorialBestMenuViewModel>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+<div class="sidebar-item  recent-projects">
+    <h3>Best Tutorials</h3>
+    @foreach (var item in Model)
+    {
+        <div class="media">
+            <div class="pull-left">
+                <a href="@Url.Action("Details", new { id = item.Id})"><img src="~/Files?id=@item.ImageId" /></a>
+            </div>
+            <div class="media-body">
+                <h4><a href="@Url.Action("Details", new { id = item.Id})">@item.Game: @item.Title</a></h4>
+                <p>likes count: @item.Likes</p>
+            </div>
+        </div>
+    }
+</div>

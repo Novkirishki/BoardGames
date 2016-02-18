@@ -65,6 +65,11 @@
             return this.tutorials.All();
         }
 
+        public IQueryable<Tutorial> GetBest(int count = 5)
+        {
+            return this.tutorials.All().OrderByDescending(t => t.Likes.Count).Take(count);
+        }
+
         public Tutorial GetById(int id)
         {
             return this.tutorials.GetById(id);

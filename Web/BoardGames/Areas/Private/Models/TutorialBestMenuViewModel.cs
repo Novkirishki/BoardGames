@@ -10,6 +10,8 @@
 
         public string Title { get; set; }
 
+        public string Game { get; set; }
+
         public int Likes { get; set; }
 
         public int ImageId { get; set; }
