@@ -10,7 +10,7 @@
       .Columns(columns =>
       {
           columns.Bound(c => c.Title);
-          columns.Bound(c => c.Content).ClientTemplate("#=Content#");
+          columns.Bound(c => c.ContentSanitized).ClientTemplate("#=ContentSanitized#").Title("Content");
           columns.Bound(c => c.Game);
           columns.Bound(c => c.Author);
           columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");

@@ -6,6 +6,7 @@
     using AutoMapper;
     using System;
     using System.Web.Mvc;
+    using Web.Infrastructure.Sanitizing;
 
     public class TutorialViewModel : IMapFrom<Tutorial>, IHaveCustomMappings
     {
@@ -18,6 +19,8 @@
         [AllowHtml]
         [Required]
         public string Content { get; set; }
+
+        public string ContentSanitized => HtmlSanitizerAdapter.Sanitize(this.Content);
 
         [Required]
         [MaxLength(50)]
