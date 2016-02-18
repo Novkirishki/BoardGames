@@ -3,7 +3,7 @@
     using BoardGames.Data.Models;
     using BoardGames.Web.Infrastructure.Mapping;
 
-    public class TutorialRandomMenuViewItem : IMapFrom<Tutorial>
+    public class TutorialRandomMenuViewModel : IMapFrom<Tutorial>
     {
         public int Id { get; set; }
 

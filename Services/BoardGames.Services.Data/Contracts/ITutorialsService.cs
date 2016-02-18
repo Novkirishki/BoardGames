@@ -14,6 +14,9 @@
         void Delete(int id);
 
         Tutorial GetById(int id);
+
         IQueryable<Tutorial> GetBest(int count = 5);
+
+        IQueryable<Tutorial> GetRandom(int count = 6);
     }
 }

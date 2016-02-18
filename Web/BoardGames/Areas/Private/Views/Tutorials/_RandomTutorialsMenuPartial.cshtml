@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BoardGames.Areas.Private.Models.TutorialRandomMenuViewModel>
+
+<div class="sidebar-item popular">
+    <h3>Random Tutorials</h3>
+    <ul class="gallery">
+        @foreach (var item in Model)
+        {
+            <li><a href="@Url.Action("Details", new { id = item.Id})"><img src="~/Files?id=@item.ImageId"></a></li>
+        }
+    </ul>
+</div>

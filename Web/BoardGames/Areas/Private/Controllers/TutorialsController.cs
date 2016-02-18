@@ -40,7 +40,8 @@
             //    this.HttpContext.Cache.Add("LatestReviews", model.LatestReviews, null, Cache.NoAbsoluteExpiration, new TimeSpan(0, 10, 0), CacheItemPriority.Normal, null);
             //}
 
-            model.BestTutorials = this.tutorials.GetBest(5).To<TutorialBestMenuViewModel>().ToList();
+            model.RandomTutorials = this.tutorials.GetRandom().To<TutorialRandomMenuViewModel>().ToList();
+            model.BestTutorials = this.tutorials.GetBest().To<TutorialBestMenuViewModel>().ToList();
             return View(model);
         }
     }

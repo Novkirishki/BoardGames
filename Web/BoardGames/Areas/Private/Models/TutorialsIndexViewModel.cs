@@ -6,7 +6,7 @@
     {
         public IEnumerable<TutorialBestMenuViewModel> BestTutorials { get; set; }
 
-        public IEnumerable<TutorialRandomMenuViewItem> RandomTutorials { get; set; }
+        public IEnumerable<TutorialRandomMenuViewModel> RandomTutorials { get; set; }
 
         public IEnumerable<TutorialListedViewModel> Tutorials { get; set; }
 

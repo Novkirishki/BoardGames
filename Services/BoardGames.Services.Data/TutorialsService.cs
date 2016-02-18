@@ -74,5 +74,10 @@
         {
             return this.tutorials.GetById(id);
         }
+
+        public IQueryable<Tutorial> GetRandom(int count = 6)
+        {
+            return this.tutorials.All().OrderBy(r => Guid.NewGuid()).Take(count);
+        }
     }
 }
