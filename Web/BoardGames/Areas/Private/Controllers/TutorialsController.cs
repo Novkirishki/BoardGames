@@ -1,6 +1,7 @@
 ﻿namespace BoardGames.Areas.Private.Controllers
 {
     using Data.Models;
+    using Microsoft.AspNet.Identity;
     using Models;
     using Services.Data.Contracts;
     using System;
@@ -14,10 +15,12 @@
     public class TutorialsController : Controller
     {
         private readonly ITutorialsService tutorials;
+        private readonly ILikesService likes;
 
-        public TutorialsController(ITutorialsService tutorials)
+        public TutorialsController(ITutorialsService tutorials, ILikesService likes)
         {
             this.tutorials = tutorials;
+            this.likes = likes;
         }
 
         public ActionResult Index(int page = 1)
@@ -85,6 +88,7 @@
             }
 
             model.Tutorial = AutoMapperConfig.Configuration.CreateMapper().Map<TutorialListedViewModel>(tutorial);
+            model.Tutorial.IsLikedByUser = (this.likes.GetByUserIdAndTutorialId(model.Tutorial.Id, User.Identity.GetUserId()) != null);
             return View(model);
         }
     }

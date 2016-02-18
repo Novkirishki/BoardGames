@@ -5,7 +5,7 @@
     using BoardGames.Web.Infrastructure.Mapping;
     using BoardGames.Data.Models;
     using Web.Infrastructure.Sanitizing;
-
+    using System.Linq;
     public class TutorialListedViewModel : IMapFrom<Tutorial>, IHaveCustomMappings
     {
         public int Id { get; set; }
@@ -23,6 +23,8 @@
         public string Game { get; set; }
 
         public int LikesCount { get; set; }
+
+        public bool IsLikedByUser { get; set; }
 
         public int CommentsCount { get; set; }
 

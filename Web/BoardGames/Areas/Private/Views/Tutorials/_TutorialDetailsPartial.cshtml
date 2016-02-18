@@ -15,7 +15,7 @@
             <div class="post-bottom overflow">
                 <ul class="nav navbar-nav post-nav">
                     <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@Model.Game</a></li>
-                    <li><a href="#" id="btnLike" data-id="@Model.Id"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
+                    <li><a href="#" id="btnLike" data-id="@Model.Id" class="@((Model.IsLikedByUser == true ? "liked" : ""))"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
                     <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i>@Model.CommentsCount Comments</a></li>
                 </ul>
             </div>

@@ -10,6 +10,6 @@
 
         Like GetByUserIdAndTutorialId(int tutorialId, string userId);
 
-        int GetCount();
+        int GetCountByTutorialId(int tutorialId);
     }
 }

@@ -39,9 +39,9 @@
             return this.likes.All().Where(l => l.UserId == userId && l.TutorialId == tutorialId).FirstOrDefault();
         }
 
-        public int GetCount()
+        public int GetCountByTutorialId(int tutorialId)
         {
-            return this.likes.All().Count();
+            return this.likes.All().Where(l => l.TutorialId == tutorialId).Count();
         }
     }
 }

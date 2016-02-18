@@ -31,7 +31,7 @@
                 this.likes.Delete(currentLike.Id);
             }
 
-            return Json(new { Count = this.likes.GetCount(), IsLikedByUser = isLikedByUser});
+            return Json(new { Count = this.likes.GetCountByTutorialId(tutorialId), IsLikedByUser = isLikedByUser});
         }
     }
 }
