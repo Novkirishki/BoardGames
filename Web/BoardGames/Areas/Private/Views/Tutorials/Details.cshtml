@@ -23,3 +23,22 @@
     </div>
 </section>
 <!--/#blog-->
+
+@section scripts {
+    <script>
+        $('#btnLike').click(function (event) {
+            event.preventDefault();
+            var id = $(this).attr('data-id');
+            $.post("/Private/Likes/Like", { tutorialId: id }, function (data) {
+                var likesCount = data.Count;
+                var isLikedByUser = data.IsLikedByUser;
+                $('#btnLike').html('<i class="fa fa-heart"></i>' + likesCount + ' Likes');
+                if (isLikedByUser) {
+                    $('#btnLike').addClass("liked");
+                } else {
+                    $('#btnLike').removeClass("liked");
+                }
+            })
+        })
+    </script>
+}

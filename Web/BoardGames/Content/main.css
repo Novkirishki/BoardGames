@@ -2765,3 +2765,11 @@ dd img{
    pointer-events: none;
    cursor: default;
 }
+
+.liked {
+    color: #C03035 !important;
+}
+
+.liked .fa {  
+    color: #C03035 !important;
+}

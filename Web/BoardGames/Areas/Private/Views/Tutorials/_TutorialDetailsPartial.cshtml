@@ -11,11 +11,11 @@
         <div class="post-content overflow">
             <h2 class="post-title bold"><a href="#" class="inactiveLink">@Model.Title</a></h2>
             <h3 class="post-author"><a href="#" class="inactiveLink">Posted by @Model.Author</a></h3>
-            <p>@Model.ContentSanitized</p>
+            <p>@Html.Raw(Model.ContentSanitized)</p>
             <div class="post-bottom overflow">
                 <ul class="nav navbar-nav post-nav">
                     <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@Model.Game</a></li>
-                    <li><a href="#" class="inactiveLink"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
+                    <li><a href="#" id="btnLike" data-id="@Model.Id"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
                     <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i>@Model.CommentsCount Comments</a></li>
                 </ul>
             </div>
