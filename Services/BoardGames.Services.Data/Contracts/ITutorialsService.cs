@@ -18,5 +18,7 @@
         IQueryable<Tutorial> GetBest(int count = 5);
 
         IQueryable<Tutorial> GetRandom(int count = 6);
+
+        IQueryable<Tutorial> GetByPage(int page = 1);
     }
 }

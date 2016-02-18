@@ -8,6 +8,7 @@
 
     public class TutorialsService : ITutorialsService
     {
+        private const int PAGE_SIZE = 6;
         private readonly IDbRepository<Tutorial> tutorials;
 
         public TutorialsService(IDbRepository<Tutorial> tutorials)
@@ -73,6 +74,11 @@
         public Tutorial GetById(int id)
         {
             return this.tutorials.GetById(id);
+        }
+
+        public IQueryable<Tutorial> GetByPage(int page = 1)
+        {
+            return this.tutorials.All().OrderBy(t => t.CreatedOn).Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
         }
 
         public IQueryable<Tutorial> GetRandom(int count = 6)
