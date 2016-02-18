@@ -20,6 +20,7 @@
         public string Content { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Game { get; set; }
 
         public string AuthorId { get; set; }

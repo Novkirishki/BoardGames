@@ -6,6 +6,7 @@
     using AutoMapper;
     using System;
     using System.Web.Mvc;
+
     public class TutorialViewModel : IMapFrom<Tutorial>, IHaveCustomMappings
     {
         public int Id { get; set; }
@@ -13,14 +14,13 @@
         [Required]
         [MaxLength(30)]
         public string Title { get; set; }
-
-        [Required]
+        
         [AllowHtml]
-        [DataType("TinyMCE")]
-        [UIHint("TinyMCE")]
+        [Required]
         public string Content { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Game { get; set; }
 
         public string Author { get; set; }
