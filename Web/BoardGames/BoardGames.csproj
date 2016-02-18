@@ -353,6 +353,7 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\Paging\left.png" />
     <Content Include="Images\Paging\right.png" />
+    <Content Include="Images\tutorials\blog-arrow.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="ApplicationInsights.config">
