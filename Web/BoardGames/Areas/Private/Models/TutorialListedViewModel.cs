@@ -20,7 +20,7 @@
 
         public string ContentSanitized => HtmlSanitizerAdapter.Sanitize(this.Content);
 
-        public string GameTitle { get; set; }
+        public string Game { get; set; }
 
         public int LikesCount { get; set; }
 

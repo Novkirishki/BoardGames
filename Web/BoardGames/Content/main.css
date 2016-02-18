@@ -2756,3 +2756,12 @@ dd img{
     width: auto;
     height: 70px;
 }
+
+.tutorial-img-list {
+    max-height: 220px;
+}
+
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}

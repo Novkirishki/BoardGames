@@ -1,4 +1,4 @@
-﻿@using BoardGames.Web.Infrastructure.Extensions
+﻿@using BoardGames.Web.Infrastructure.Extensions 
 @model IEnumerable<BoardGames.Areas.Private.Models.TutorialListedViewModel>
 
 
@@ -7,21 +7,21 @@
     <div class="col-md-6 col-sm-12 blog-padding-right">
         <div class="single-blog two-column">
             <div class="post-thumb">
-                <a href="@Url.Action("Details", new { id = item.Id})"><img src="~/Files?id=@item.ImageId" class="img-responsive" alt="@item.Title"></a>
+                <a href="@Url.Action("Details", new { id = item.Id})"><img class="tutorial-img-list" src="~/Files?id=@item.ImageId" class="img-responsive" alt="@item.Title"></a>
                 <div class="post-overlay">
-                    <span class="uppercase"><a href="@Url.Action("Details", new { id = item.Id})">@item.CreatedOn.Day <br><small>@item.CreatedOn.Month.ToString("MMM")</small></a></span>
+                    <span class="uppercase"><a href="@Url.Action("Details", new { id = item.Id})">@item.CreatedOn.Day <br><small>@item.CreatedOn.ToString("MMM")</small></a></span>
                 </div>
             </div>
             <div class="post-content overflow">
                 <h2 class="post-title bold"><a href="@Url.Action("Details", new { id = item.Id})">@item.Title</a></h2>
-                <h3 class="post-author">Posted by @item.Author</h3>
-                <p>@item.Content.Chop(300) [...]</p>
+                <h3 class="post-author"><a href="#" class="inactiveLink">Posted by @item.Author</a></h3>
+                <p>@item.Content.Chop(300)</p>
                 <a href="@Url.Action("Details", new { id = item.Id})" class="read-more">View More</a>
                 <div class="post-bottom overflow">
                     <ul class="nav nav-justified post-nav">
-                        <li><i class="fa fa-tag"></i>@item.GameTitle</li>
-                        <li><i class="fa fa-heart"></i>@item.LikesCount Likes</li>
-                        <li><i class="fa fa-comments"></i>@item.CommentsCount Comments</li>
+                        <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@item.Game</a></li>
+                        <li><a href="#" class="inactiveLink"><i class="fa fa-heart"></i>@item.LikesCount Likes</a></li>
+                        <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i>@item.CommentsCount Comments</a></li>
                     </ul>
                 </div>
             </div>
