@@ -4,9 +4,11 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
+    using System;
 
     public class ReviewsService : IReviewsService
     {
+        private const int PAGE_SIZE = 12;
         private readonly IDbRepository<Review> reviews;
 
         public ReviewsService(IDbRepository<Review> reviews)
@@ -90,8 +92,8 @@
 
             return result
                 .OrderByDescending(r => r.CreatedOn)
-                .Skip((page - 1) * 12)
-                .Take(12);
+                .Skip((page - 1) * PAGE_SIZE)
+                .Take(PAGE_SIZE);
         }
 
         public IQueryable<Review> GetLatest(int count)
@@ -108,7 +110,8 @@
                 result = result.Where(r => r.Category.Name == category);
             }
 
-            return (result.Count() + 5) / 12;
+
+            return (int)Math.Ceiling(result.Count() / (decimal)PAGE_SIZE);
         }
     }
 }

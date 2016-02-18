@@ -81,6 +81,11 @@
             return this.tutorials.All().OrderBy(t => t.CreatedOn).Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
         }
 
+        public int GetPagesCount()
+        {
+            return (int) Math.Ceiling(this.tutorials.All().Count() / (decimal)PAGE_SIZE);
+        }
+
         public IQueryable<Tutorial> GetRandom(int count = 6)
         {
             return this.tutorials.All().OrderBy(r => Guid.NewGuid()).Take(count);

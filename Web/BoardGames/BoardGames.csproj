@@ -417,6 +417,7 @@
     <Content Include="Areas\Private\Views\Tutorials\_BestTutorialsMenuPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_RandomTutorialsMenuPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_ListetTutorialsPartial.cshtml" />
+    <Content Include="Areas\Private\Views\Tutorials\_TutorialsPaginationPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

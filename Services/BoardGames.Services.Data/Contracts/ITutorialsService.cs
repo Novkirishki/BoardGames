@@ -20,5 +20,7 @@
         IQueryable<Tutorial> GetRandom(int count = 6);
 
         IQueryable<Tutorial> GetByPage(int page = 1);
+
+        int GetPagesCount();
     }
 }
