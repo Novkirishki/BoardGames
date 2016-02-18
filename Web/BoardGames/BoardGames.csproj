@@ -233,6 +233,7 @@
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
+    <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
@@ -408,6 +409,7 @@
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Areas\Admin\Views\Tutorials\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\TutorialViewModel.cshtml" />
+    <Content Include="Areas\Private\Views\Tutorials\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -466,7 +468,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Private\Controllers\" />
     <Folder Include="Areas\Private\Models\" />
     <Folder Include="Areas\Private\Views\Shared\" />
   </ItemGroup>
