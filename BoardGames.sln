@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{35
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Services.Data", "Services\BoardGames.Services.Data\BoardGames.Services.Data.csproj", "{3EB3A199-4B96-4E6B-8F85-BB05600FA478}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{5189BD67-FA84-43FE-95A9-F73E021907E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGames.Common", "Common\BoardGames.Common\BoardGames.Common.csproj", "{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EB3A199-4B96-4E6B-8F85-BB05600FA478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +70,6 @@ Global
 		{A23A3B6F-9E56-4CBA-9D95-83A2E9D6C76B} = {CFB7937B-23E9-480A-BF79-D00EEF4AAB1B}
 		{FB28C9C2-6C64-49D3-900D-2FD9EA8F9EF7} = {930E7274-2138-413C-B883-869787195F4A}
 		{3EB3A199-4B96-4E6B-8F85-BB05600FA478} = {35E5F7C8-A872-4E09-821E-1EDD1C36F66F}
+		{2F5954CD-E6A5-4EF4-98DD-3C2B410E1DE8} = {5189BD67-FA84-43FE-95A9-F73E021907E7}
 	EndGlobalSection
 EndGlobal

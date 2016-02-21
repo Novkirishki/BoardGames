@@ -490,6 +490,10 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\BoardGames.Common\BoardGames.Common.csproj">
+      <Project>{2f5954cd-e6a5-4ef4-98dd-3c2b410e1de8}</Project>
+      <Name>BoardGames.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\BoardGames.Data.Common\BoardGames.Data.Common.csproj">
       <Project>{a23a3b6f-9e56-4cba-9d95-83a2e9d6c76b}</Project>
       <Name>BoardGames.Data.Common</Name>

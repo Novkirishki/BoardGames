@@ -1,5 +1,6 @@
 namespace BoardGames.Data.Migrations
 {
+    using BoardGames.Common;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -24,14 +25,14 @@ namespace BoardGames.Data.Migrations
         {
             //Admin
             const string AdministratorUserName = "admin@admin.com";
-            const string AdministratorPassword = "admin";
+            const string AdministratorPassword = "admin1";
 
-            if (!context.Roles.Any())
+            if (!context.Roles.Any(r => r.Name == GlobalConstants.AdministratorRoleName))
             {
                 // Create admin role
                 var roleStore = new RoleStore<IdentityRole>(context);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole { Name = "Administrator" };
+                var role = new IdentityRole { Name = GlobalConstants.AdministratorRoleName };
                 roleManager.Create(role);
 
                 // Create admin user
@@ -41,7 +42,7 @@ namespace BoardGames.Data.Migrations
                 userManager.Create(user, AdministratorPassword);
 
                 // Assign user to admin role
-                userManager.AddToRole(user.Id, "Administrator");
+                userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
             }
 
             // Categories
