@@ -1,5 +1,7 @@
 namespace BoardGames.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
     using System;
     using System.Collections.Generic;
@@ -20,6 +22,29 @@ namespace BoardGames.Data.Migrations
 
         protected override void Seed(Data.BoardGamesDbContext context)
         {
+            //Admin
+            const string AdministratorUserName = "admin@admin.com";
+            const string AdministratorPassword = "admin";
+
+            if (!context.Roles.Any())
+            {
+                // Create admin role
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = "Administrator" };
+                roleManager.Create(role);
+
+                // Create admin user
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User { UserName = AdministratorUserName, Email = AdministratorUserName };
+                userManager.Create(user, AdministratorPassword);
+
+                // Assign user to admin role
+                userManager.AddToRole(user.Id, "Administrator");
+            }
+
+            // Categories
             if (!context.Categories.Any())
             {
                 var categories = new List<Category>
@@ -39,9 +64,12 @@ namespace BoardGames.Data.Migrations
                 {
                     context.Categories.Add(category);
                 }
+            }
 
-                var a = HostingEnvironment.ApplicationPhysicalPath;
-
+            // Files
+            if (!context.Files.Any())
+            {
+                // Image
                 var defaultReviewImage = new Models.File
                 {
                     ContentType = "image/png",
