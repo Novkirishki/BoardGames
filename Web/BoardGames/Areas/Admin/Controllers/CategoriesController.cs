@@ -7,7 +7,9 @@
     using Web.Infrastructure.Mapping;
     using System.Linq;
     using BoardGames.Models;
+    using Common;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class CategoriesController : Controller
     {
         private readonly ICategoriesService categories;

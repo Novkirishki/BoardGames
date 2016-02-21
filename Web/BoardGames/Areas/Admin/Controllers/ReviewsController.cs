@@ -10,6 +10,9 @@
     using Web.Infrastructure.Mapping;
     using BoardGames.Models;
     using System.Web;
+    using Common;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
 
     public class ReviewsController : Controller
     {
