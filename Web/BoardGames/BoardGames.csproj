@@ -333,6 +333,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Admin\categories.jpg" />
+    <Content Include="Images\Admin\comments.jpg" />
     <Content Include="Images\Admin\events.jpg" />
     <Content Include="Images\Admin\reviews.jpg" />
     <Content Include="Images\Admin\tutorials.jpg" />
