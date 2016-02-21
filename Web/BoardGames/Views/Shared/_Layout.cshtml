@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Board Games Kingdom</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
     <header id="header">
@@ -45,13 +47,15 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" })</li>
                         <li>@Html.ActionLink("Contact", "Contact", new { area = "", controller = "Home" })</li>
-                        <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1})</li>
+                        <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1 })</li>
+                        <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
                         <li class="dropdown">
                             <a href="~/Admin/Home">Admin panel <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li>@Html.ActionLink("Home", "Index", new { area = "Admin", controller = "Home" })</li>
                                 <li>@Html.ActionLink("Categories", "Index", new { area = "Admin", controller = "Categories" })</li>
                                 <li>@Html.ActionLink("Reviews", "Index", new { area = "Admin", controller = "Reviews" })</li>
+                                <li>@Html.ActionLink("Tutorials", "Index", new { area = "Admin", controller = "Tutorials" })</li>
                             </ul>
                         </li>
                     </ul>
@@ -131,13 +135,8 @@
     </footer>
     <!--/#footer-->
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
-
-    <script>
-        $.material.init();
-    </script>
 </body>
 </html>

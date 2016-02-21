@@ -1,0 +1,44 @@
+﻿@model BoardGames.Areas.Private.Models.TutorialDetailsPageViewModel
+
+@{
+    ViewBag.Title = "Tutorial details";
+    ViewBag.Subtitle = "All you need to know";
+}
+
+<section id="blog-details" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                    @Html.Partial("_TutorialDetailsPartial", Model.Tutorial)
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-5">
+                <div class="sidebar blog-sidebar">
+                    @Html.Partial("_BestTutorialsMenuPartial", Model.BestTutorials)
+                    @Html.Partial("_RandomTutorialsMenuPartial", Model.RandomTutorials)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#blog-->
+
+@section scripts {
+    <script>
+        $('#btnLike').click(function (event) {
+            event.preventDefault();
+            var id = $(this).attr('data-id');
+            $.post("/Private/Likes/Like", { tutorialId: id }, function (data) {
+                var likesCount = data.Count;
+                var isLikedByUser = data.IsLikedByUser;
+                $('#btnLike').html('<i class="fa fa-heart"></i>' + likesCount + ' Likes');
+                if (isLikedByUser) {
+                    $('#btnLike').addClass("liked");
+                } else {
+                    $('#btnLike').removeClass("liked");
+                }
+            })
+        })
+    </script>
+}

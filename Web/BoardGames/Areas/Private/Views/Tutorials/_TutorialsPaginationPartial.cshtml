@@ -1,0 +1,23 @@
+﻿@model int
+
+@{
+    var currentPage = int.Parse((Request.QueryString["page"] == null) ? "1" : Request.QueryString["page"]);
+
+    <div class="blog-pagination">
+        <ul class="pagination">
+            <li><a href="@Url.Action("Index", new { page = (currentPage == 1 ? 1 : currentPage - 1)})">left</a></li>
+            @for (int i = 1; i <= Model; i++)
+            {
+                if (currentPage == i)
+                {
+                    <li class="active"><a href="@Url.Action("Index", new { page = i })">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("Index", new { page = i })">@i</a></li>
+                }
+            }
+            <li><a href="@Url.Action("Index", new { page = (currentPage == Model ? Model : currentPage + 1)})">right</a></li>
+        </ul>
+    </div>
+}

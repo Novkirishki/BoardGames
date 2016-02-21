@@ -2,14 +2,14 @@
 
 @{
     var category = Request.QueryString["category"];
-    var currentPage = int.Parse(Request.QueryString["page"]);
+    var currentPage = int.Parse((Request.QueryString["page"] == null) ? "1" : Request.QueryString["page"]);
 
     <div class="portfolio-pagination">
         <ul class="pagination">
             <li><a href="@Url.Action("Index", new { category = category, page = (currentPage == 1 ? 1 : currentPage - 1)})">left</a></li>
             @for (int i = 1; i <= Model; i++)
             {
-                if (Request.QueryString["page"] == i.ToString())
+                if (currentPage == i)
                 {
                     <li class="active"><a href="@Url.Action("Index", new { category = category, page = i })">@i</a></li>
                 }

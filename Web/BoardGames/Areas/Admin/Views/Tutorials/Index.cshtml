@@ -1,0 +1,38 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Tutorials";
+    ViewBag.Subtitle = "Home";
+}
+
+@(Html.Kendo().Grid<BoardGames.Areas.Admin.Models.TutorialViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Title);
+          columns.Bound(c => c.ContentSanitized).ClientTemplate("#=ContentSanitized#").Title("Content");
+          columns.Bound(c => c.Game);
+          columns.Bound(c => c.Author);
+          columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
+          columns.Bound(c => c.ImageId).ClientTemplate("<img class='kendo-grid-img' src='/Files?id=#:data.ImageId#'/>").Title("Image");
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar => {
+          toolbar.Create();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Tutorials_Read", "Tutorials"))
+          .Create(create => create.Action("Tutorials_Create", "Tutorials"))
+          .Update(update => update.Action("Tutorials_Update", "Tutorials"))
+          .Destroy(destroy => destroy.Action("Tutorials_Destroy", "Tutorials"))
+      )
+)

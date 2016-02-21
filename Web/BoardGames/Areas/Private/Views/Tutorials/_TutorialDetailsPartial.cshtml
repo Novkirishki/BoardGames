@@ -1,0 +1,58 @@
+﻿@model BoardGames.Areas.Private.Models.TutorialListedViewModel
+
+<div class="col-md-12 col-sm-12">
+    <div class="single-blog blog-details two-column">
+        <div class="post-thumb">
+            <a href="#" class="inactiveLink"><img src="~/Files?id=@Model.ImageId" class="img-responsive" alt="@Model.Title"></a>
+            <div class="post-overlay">
+                <span class="uppercase"><a href="#" class="inactiveLink">@Model.CreatedOn.Day <br><small>@Model.CreatedOn.ToString("MMM")</small></a></span>
+            </div>
+        </div>
+        <div class="post-content overflow">
+            <h2 class="post-title bold"><a href="#" class="inactiveLink">@Model.Title</a></h2>
+            <h3 class="post-author"><a href="#" class="inactiveLink">Posted by @Model.Author</a></h3>
+            <p>@Html.Raw(Model.ContentSanitized)</p>
+            <div class="post-bottom overflow">
+                <ul class="nav navbar-nav post-nav">
+                    <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@Model.Game</a></li>
+                    <li><a href="#" id="btnLike" data-id="@Model.Id" class="@((Model.IsLikedByUser == true ? "liked" : ""))"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
+                    <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i>@Model.CommentsCount Comments</a></li>
+                </ul>
+            </div>
+            <div class="blog-share">
+                <span class='st_facebook_hcount'></span>
+                <span class='st_twitter_hcount'></span>
+                <span class='st_linkedin_hcount'></span>
+                <span class='st_pinterest_hcount'></span>
+                <span class='st_email_hcount'></span>
+            </div>
+            <div class="response-area">
+                <h2 class="bold">Comments</h2>
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="post-comment">
+                            <div class="media-body">
+                                <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">Endure</a></span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                                <ul class="nav navbar-nav post-nav">
+                                    <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="post-comment">
+                            <div class="media-body">
+                                <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">Endure</a></span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                                <ul class="nav navbar-nav post-nav">
+                                    <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
