@@ -55,7 +55,7 @@
         // GET: Admin/Reviews/Create
         public ActionResult Create()
         {
-            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            var categories = this.categories.GetAll().To<Models.CategoryViewModel>().ToList();
             ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
             return View();
         }
@@ -96,7 +96,7 @@
                 return RedirectToAction("Index");
             }
 
-            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            var categories = this.categories.GetAll().To<Models.CategoryViewModel>().ToList();
             ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
             return View(model);
         }
@@ -115,7 +115,7 @@
                 return HttpNotFound();
             }
 
-            var categories = this.categories.GetAll().To<CategoryViewModel>().ToList();
+            var categories = this.categories.GetAll().To<Models.CategoryViewModel>().ToList();
             ViewBag.CategoryId = new SelectList(categories, "Id", "Name");
 
             var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<ReviewCreateViewModel>(review);

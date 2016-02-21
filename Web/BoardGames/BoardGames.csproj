@@ -233,6 +233,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Models\CategoryViewModel.cs" />
     <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
@@ -246,7 +247,6 @@
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
     <Compile Include="Controllers\FilesController.cs" />
-    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewCreateViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewViewModel.cs" />
     <Compile Include="Areas\Public\Controllers\ReviewsController.cs" />
@@ -378,10 +378,6 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -427,6 +423,8 @@
     <Content Include="Areas\Private\Views\Tutorials\Details.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_TutorialDetailsPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Comments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CategoryViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CommentViewModel.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -486,6 +484,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Likes\" />
+    <Folder Include="Views\Categories\" />
     <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
