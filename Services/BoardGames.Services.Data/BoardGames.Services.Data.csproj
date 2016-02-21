@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriesService.cs" />
+    <Compile Include="CommentsService.cs" />
     <Compile Include="Contracts\ICategoriesService.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
     <Compile Include="Contracts\IFilesService.cs" />
     <Compile Include="Contracts\ILikesService.cs" />
     <Compile Include="Contracts\IReviewsService.cs" />

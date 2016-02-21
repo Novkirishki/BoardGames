@@ -229,9 +229,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
@@ -423,6 +425,7 @@
     <Content Include="Areas\Private\Views\Tutorials\_TutorialsPaginationPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\Details.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_TutorialDetailsPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Comments\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -482,6 +485,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Likes\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
