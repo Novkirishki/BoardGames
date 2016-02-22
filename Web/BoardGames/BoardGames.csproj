@@ -229,10 +229,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\CategoryViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Private\Models\TutorialBestMenuViewModel.cs" />
@@ -244,8 +249,6 @@
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
     <Compile Include="Controllers\FilesController.cs" />
-    <Compile Include="Models\CategoryViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\ReviewCreateViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ReviewViewModel.cs" />
     <Compile Include="Areas\Public\Controllers\ReviewsController.cs" />
     <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
@@ -331,6 +334,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Admin\categories.jpg" />
+    <Content Include="Images\Admin\comments.jpg" />
     <Content Include="Images\Admin\events.jpg" />
     <Content Include="Images\Admin\reviews.jpg" />
     <Content Include="Images\Admin\tutorials.jpg" />
@@ -375,17 +379,9 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Reviews\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Reviews\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Reviews\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Reviews\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Reviews\Index.cshtml" />
     <Content Include="Areas\Public\Views\web.config" />
     <Content Include="Areas\Public\Views\Reviews\Index.cshtml" />
@@ -423,6 +419,12 @@
     <Content Include="Areas\Private\Views\Tutorials\_TutorialsPaginationPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\Details.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_TutorialDetailsPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Comments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CategoryViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CommentViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ReviewViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\UserViewModel.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -482,6 +484,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Likes\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -490,6 +493,10 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\BoardGames.Common\BoardGames.Common.csproj">
+      <Project>{2f5954cd-e6a5-4ef4-98dd-3c2b410e1de8}</Project>
+      <Name>BoardGames.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\BoardGames.Data.Common\BoardGames.Data.Common.csproj">
       <Project>{a23a3b6f-9e56-4cba-9d95-83a2e9d6c76b}</Project>
       <Name>BoardGames.Data.Common</Name>

@@ -6,12 +6,8 @@
 
     public class Comment : BaseModel<int>
     {
-        public Comment()
-        {
-            this.Replies = new HashSet<Reply>();
-        }
-
         [Required]
+        [MaxLength(200)]
         public string Content { get; set; }
 
         [Required]
@@ -23,7 +19,5 @@
         public int TutorialId { get; set; }
 
         public virtual Tutorial Tutorial { get; set; }
-
-        public virtual ICollection<Reply> Replies { get; set; }
     }
 }

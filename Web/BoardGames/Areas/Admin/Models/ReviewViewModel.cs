@@ -5,6 +5,7 @@
     using Web.Infrastructure.Mapping;
     using AutoMapper;
     using System;
+    using Web.Infrastructure.Sanitizing;
 
     public class ReviewViewModel : IMapFrom<Review>, IHaveCustomMappings
     {
@@ -14,10 +15,14 @@
         [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         public string GameTitle { get; set; }
 
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
+
+        public string CategoryName { get; set; }
 
         [Required]
         public string Content { get; set; }
+
+        public string ContentSanitized => HtmlSanitizerAdapter.Sanitize(this.Content);
 
         [Range(1, 50, ErrorMessage = "The minimum players must be between {1} and {2}")]
         public int MinPlayers { get; set; }
@@ -40,10 +45,12 @@
 
         public int ImageId { get; set; }
 
+        public DateTime? ModifiedOn { get; set; }
+
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Review, ReviewViewModel>()
-                .ForMember(x => x.Category, opt => opt.MapFrom(x => x.Category.Name))
+                .ForMember(x => x.CategoryName, opt => opt.MapFrom(x => x.Category.Name))
                 .ForMember(x => x.Creator, opt => opt.MapFrom(x => x.Creator.UserName));
         }
     }

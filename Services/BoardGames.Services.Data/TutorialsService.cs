@@ -26,7 +26,7 @@
                 AuthorId = creatorId
             };
 
-            if (imageId != null)
+            if (imageId != null && imageId != 0)
             {
                 newTutorial.ImageId = (int)imageId;
             }
@@ -53,7 +53,7 @@
             tutorialToBeEdited.Game = gameTitle;
             tutorialToBeEdited.Content = content;
 
-            if (imageId != null)
+            if (imageId != null && imageId != 0)
             {
                 tutorialToBeEdited.ImageId = (int)imageId;
             }

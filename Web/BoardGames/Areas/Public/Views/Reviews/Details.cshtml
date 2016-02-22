@@ -16,7 +16,7 @@
                     <h2 class="bold">@Model.GameTitle</h2>
                     <ul class="nav navbar-nav navbar-default">
                         <li><i class="fa fa-calendar"></i>@Model.CreatedOn.ToString("MMMMdd,yyyy")</li>
-                        <li><a href="@Url.Action("Index", new { category = Model.Category, page = 1 })"><i class="fa fa-tag"></i>@Model.Category</a></li>
+                        <li><a href="@Url.Action("Index", new { category = Model.CategoryName, page = 1 })"><i class="fa fa-tag"></i>@Model.CategoryName</a></li>
                     </ul>
                 </div>
                 <div class="project-info overflow">
