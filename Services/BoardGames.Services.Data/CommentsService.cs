@@ -4,6 +4,7 @@
     using System.Linq;
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
+    using Common;
 
     public class CommentsService : ICommentsService
     {
@@ -46,6 +47,15 @@
         public IQueryable<Comment> GetAll()
         {
             return this.comments.All();
+        }
+
+        public IQueryable<Comment> GetByPage(int tutorialId, int page)
+        {
+            return this.comments.All()
+                .Where(c => c.TutorialId == tutorialId)
+                .OrderBy(c => c.CreatedOn)
+                .Skip((page - 1) * GlobalConstants.CommentsPageSize)
+                .Take(GlobalConstants.CommentsPageSize);
         }
     }
 }
