@@ -95,9 +95,11 @@
     <Compile Include="Contracts\ITutorialsService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="FilesService.cs" />
+    <Compile Include="IStatisticsService.cs" />
     <Compile Include="LikesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewsService.cs" />
+    <Compile Include="SatisticsService.cs" />
     <Compile Include="TutorialsService.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>
