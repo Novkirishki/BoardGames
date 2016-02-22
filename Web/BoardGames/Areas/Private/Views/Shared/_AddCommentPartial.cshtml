@@ -7,6 +7,7 @@
 
         using (Ajax.BeginForm("Add", "Comments", new { area = "Private", tutorialId = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString()), page = currentPage }, new AjaxOptions
         {
+            OnSuccess = "updateCommentsCount",
             UpdateTargetId = "comments",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST"

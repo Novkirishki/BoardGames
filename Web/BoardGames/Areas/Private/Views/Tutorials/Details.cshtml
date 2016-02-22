@@ -40,5 +40,12 @@
                 }
             })
         })
+
+        function updateCommentsCount() {
+            var comments = $('#commentsCount');
+            var commentsCount = comments.html();
+            commentsCount = (+commentsCount) + 1;
+            comments.html(commentsCount);
+        }
     </script>
 }
