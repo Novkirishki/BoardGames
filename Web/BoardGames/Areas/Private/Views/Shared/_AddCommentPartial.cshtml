@@ -4,8 +4,9 @@
     <h2>Add comment</h2>    
     @{ 
         var currentPage = int.Parse(Request.QueryString["page"] == null ? "1" : Request.QueryString["page"]);
+        var tutorialId = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
 
-        using (Ajax.BeginForm("Add", "Comments", new { area = "Private", tutorialId = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString()), page = currentPage }, new AjaxOptions
+        using (Ajax.BeginForm("Add", "Comments", new { area = "Private", tutorialId = tutorialId, page = currentPage }, new AjaxOptions
         {
             OnSuccess = "updateCommentsCount",
             UpdateTargetId = "comments",

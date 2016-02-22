@@ -22,14 +22,20 @@
         {
             this.comments.Add(model.Content, User.Identity.GetUserId(), tutorialId);
 
-            var result = this.comments.GetByPage(tutorialId, page).To<CommentViewModel>().ToList();
+            var result = new CommentsViewModel();
+
+            result.Comments = this.comments.GetByPage(tutorialId, page).To<CommentViewModel>().ToList();
+            result.Pages = this.comments.GetPagesCount(tutorialId);
 
             return this.PartialView("_CommentsPartial", result);
         }
         
         public ActionResult GetByPage(int tutorialId, int page)
         {
-            var result = this.comments.GetByPage(tutorialId, page).To<CommentViewModel>().ToList();
+            var result = new CommentsViewModel();
+
+            result.Comments = this.comments.GetByPage(tutorialId, page).To<CommentViewModel>().ToList();
+            result.Pages = this.comments.GetPagesCount(tutorialId);
 
             return this.PartialView("_CommentsPartial", result);
         }

@@ -1,9 +1,9 @@
-﻿@model IEnumerable<BoardGames.Areas.Private.Models.CommentViewModel>
+﻿@model BoardGames.Areas.Private.Models.CommentsViewModel
 
 <div class="response-area">
     <h2 class="bold">Comments</h2>
     <ul class="media-list">
-        @if (Model.Count() == 0)
+        @if (Model.Comments.Count() == 0)
         {
             <li class="media">
                 <div class="post-comment">
@@ -14,7 +14,7 @@
             </li>
         }
         else {
-            foreach (var item in Model)
+            foreach (var item in Model.Comments)
             {
                 <li class="media">
                     <div class="post-comment">
@@ -31,3 +31,5 @@
         }
     </ul>
 </div>
+
+@Html.Partial("_CommentsPaginationPartial", Model.Pages)

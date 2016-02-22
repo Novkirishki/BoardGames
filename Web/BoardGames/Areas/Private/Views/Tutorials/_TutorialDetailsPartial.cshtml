@@ -1,6 +1,8 @@
 ﻿@using BoardGames.Areas.Private.Models
 @model BoardGames.Areas.Private.Models.TutorialListedViewModel
 
+@{ var currentPage = int.Parse((Request.QueryString["page"] == null) ? "1" : Request.QueryString["page"]); }
+
 <div class="col-md-12 col-sm-12">
     <div class="single-blog blog-details two-column">
         <div class="post-thumb">
@@ -31,7 +33,7 @@
                 @Html.Partial("_AddCommentPartial", new CommentCreateViewModel())
             </div>
             <div id="comments">
-                @Html.Action("GetByPage", "Comments", new { area = "Private", tutorialId = Model.Id, page = 1})
+                @Html.Action("GetByPage", "Comments", new { area = "Private", tutorialId = Model.Id, page = currentPage})
             </div>          
         </div>
     </div>

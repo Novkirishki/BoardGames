@@ -242,6 +242,7 @@
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Private\Models\CommentCreateViewModel.cs" />
+    <Compile Include="Areas\Private\Models\CommentsViewModel.cs" />
     <Compile Include="Areas\Private\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialBestMenuViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialDetailsPageViewModel.cs" />
@@ -430,6 +431,7 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\UserViewModel.cshtml" />
     <Content Include="Areas\Private\Views\Shared\_AddCommentPartial.cshtml" />
     <Content Include="Areas\Private\Views\Shared\_CommentsPartial.cshtml" />
+    <Content Include="Areas\Private\Views\Shared\_CommentsPaginationPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

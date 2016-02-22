@@ -5,6 +5,7 @@
     using BoardGames.Data.Models;
     using BoardGames.Data.Common;
     using Common;
+    using System;
 
     public class CommentsService : ICommentsService
     {
@@ -56,6 +57,13 @@
                 .OrderBy(c => c.CreatedOn)
                 .Skip((page - 1) * GlobalConstants.CommentsPageSize)
                 .Take(GlobalConstants.CommentsPageSize);
+        }
+
+        public int GetPagesCount(int tutorialId)
+        {
+            var comments = this.comments.All().Where(c => c.TutorialId == tutorialId);
+
+            return (int)Math.Ceiling(comments.Count() / (decimal)GlobalConstants.CommentsPageSize);
         }
     }
 }

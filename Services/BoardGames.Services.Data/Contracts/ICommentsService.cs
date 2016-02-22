@@ -14,5 +14,7 @@
         void Delete(int id);
 
         IQueryable<Comment> GetByPage(int tutorialId, int page);
+
+        int GetPagesCount(int tutorialId);
     }
 }

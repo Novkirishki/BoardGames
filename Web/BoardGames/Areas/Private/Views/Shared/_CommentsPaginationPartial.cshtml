@@ -1,0 +1,24 @@
+﻿@model int
+
+@{
+    var currentPage = int.Parse((Request.QueryString["page"] == null) ? "1" : Request.QueryString["page"]);
+    var tutorialId = int.Parse(Url.RequestContext.RouteData.Values["id"] != null ? Url.RequestContext.RouteData.Values["id"].ToString() : Request.QueryString["tutorialId"]);
+
+    <div class="blog-pagination">
+        <ul class="pagination">
+            <li><a href="@Url.Action("Details", "Tutorials",new { area = "Private", id = tutorialId, page = (currentPage == 1 ? 1 : currentPage - 1)})">left</a></li>
+            @for (int i = 1; i <= Model; i++)
+            {
+                if (currentPage == i)
+                {
+                    <li class="active"><a href="@Url.Action("Details", "Tutorials",new { area = "Private", id = tutorialId, page = i })">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("Details", "Tutorials",new { area = "Private", id = tutorialId, page = i })">@i</a></li>
+                }
+            }
+            <li><a href="@Url.Action("Details", "Tutorials",new { area = "Private", id = tutorialId, page = (currentPage == Model ? Model : currentPage + 1)})">right</a></li>
+        </ul>
+    </div>
+}
