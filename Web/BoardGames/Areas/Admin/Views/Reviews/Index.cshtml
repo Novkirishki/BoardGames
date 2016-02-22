@@ -10,13 +10,13 @@
       .Columns(columns =>
       {
           columns.Bound(c => c.CategoryName);
-          columns.Bound(c => c.GameTitle);
-          columns.Bound(c => c.ContentSanitized).ClientTemplate("#=ContentSanitized#").Title("Content");
+          columns.Bound(c => c.GameTitle).ClientTemplate("<a href='/Public/Reviews/Details/#:data.Id#'>#:data.GameTitle#</a>");
+          columns.Bound(c => c.ContentSanitized).ClientTemplate(string.Format("{0}...", "#= formatter(ContentSanitized) #")).Title("Content");
           columns.Bound(c => c.MinPlayers);
           columns.Bound(c => c.MaxPlayers);
           columns.Bound(c => c.MinAgeRequired);
           columns.Bound(c => c.MinPlayingTimeInMinutes);
-          columns.Bound(c => c.UrlToOfficialSite);
+          columns.Bound(c => c.UrlToOfficialSite).ClientTemplate("<a href='#:data.UrlToOfficialSite#'>site</a>");
           columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
           columns.Bound(c => c.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm}");
           columns.Bound(c => c.ImageId).ClientTemplate("<img class='kendo-grid-img' src='/Files?id=#:data.ImageId#'/>").Title("Image");
@@ -41,3 +41,9 @@
           .Destroy(destroy => destroy.Action("Reviews_Destroy", "Reviews"))
       )
 )
+
+<script type="text/javascript">
+    function formatter(value) {
+        return value.substring(0, 50);
+    }
+</script>

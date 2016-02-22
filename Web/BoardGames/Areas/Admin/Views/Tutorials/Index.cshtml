@@ -9,8 +9,8 @@
       .Name("grid")
       .Columns(columns =>
       {
-          columns.Bound(c => c.Title);
-          columns.Bound(c => c.ContentSanitized).ClientTemplate("#=ContentSanitized#").Title("Content");
+          columns.Bound(c => c.Title).ClientTemplate("<a href='/Private/Tutorials/Details/#:data.Id#'>#:data.Title#</a>");
+          columns.Bound(c => c.ContentSanitized).ClientTemplate(string.Format("{0}...", "#= formatter(ContentSanitized) #")).Title("Content");
           columns.Bound(c => c.Game);
           columns.Bound(c => c.Author);
           columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
@@ -36,3 +36,9 @@
           .Destroy(destroy => destroy.Action("Tutorials_Destroy", "Tutorials"))
       )
 )
+
+<script type="text/javascript">
+    function formatter(value) {
+        return value.substring(0, 80);
+    }
+</script>
