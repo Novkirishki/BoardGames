@@ -9,6 +9,7 @@
         using (Ajax.BeginForm("Add", "Comments", new { area = "Private", tutorialId = tutorialId, page = currentPage }, new AjaxOptions
         {
             OnSuccess = "updateCommentsCount",
+            OnBegin = "clear",
             UpdateTargetId = "comments",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST"
@@ -17,7 +18,7 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.TextAreaFor(c => c.Content, new { @class = "form-control", placeholder = "Your text here", rows = "5" })
+                @Html.TextAreaFor(c => c.Content, new { @class = "form-control", placeholder = "Your text here", rows = "5", id = "commentInput" })
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-submit" value="Submit" />
