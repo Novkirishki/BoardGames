@@ -1,6 +1,5 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Data.Entity;
     using System.Web.Mvc;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -8,6 +7,8 @@
     using Models;
     using Services.Data.Contracts;
     using Web.Infrastructure.Mapping;
+    using System.Linq;
+
     public class CategoriesController : Controller
     {
         private readonly ICategoriesService categories;
