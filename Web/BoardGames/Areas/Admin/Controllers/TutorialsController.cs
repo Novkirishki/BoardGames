@@ -7,6 +7,9 @@
     using Models;
     using Web.Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
+    using Common;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
 
     public class TutorialsController : Controller
     {

@@ -1,22 +1,20 @@
 ﻿@using Kendo.Mvc.UI
 
 @{
-    ViewBag.Title = "Categories";
+    ViewBag.Title = "Comments";
     ViewBag.Subtitle = "Home";
 }
 
-@(Html.Kendo().Grid<BoardGames.Areas.Admin.Models.CategoryViewModel>()
+@(Html.Kendo().Grid<BoardGames.Areas.Admin.Models.CommentViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
-          columns.Bound(c => c.Name);
-          columns.Bound(c => c.NumberOfReviews);
+          columns.Bound(c => c.Content);
+          columns.Bound(c => c.Author);
+          columns.Bound(c => c.TutorialId);
           columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
           columns.Bound(c => c.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm}");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
-      })
-      .ToolBar(toolbar => {
-          toolbar.Create();
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
@@ -28,9 +26,8 @@
       .DataSource(dataSource => dataSource
           .Ajax()
           .Model(model => model.Id(p => p.Id))
-          .Read(read => read.Action("Categories_Read", "Categories"))
-          .Create(create => create.Action("Categories_Create", "Categories"))
-          .Update(update => update.Action("Categories_Update", "Categories"))
-          .Destroy(destroy => destroy.Action("Categories_Destroy", "Categories"))
+          .Read(read => read.Action("Comments_Read", "Comments"))
+          .Update(update => update.Action("Comments_Update", "Comments"))
+          .Destroy(destroy => destroy.Action("Comments_Destroy", "Comments"))
       )
 )

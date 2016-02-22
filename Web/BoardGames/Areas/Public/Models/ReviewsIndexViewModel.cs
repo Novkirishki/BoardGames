@@ -1,6 +1,6 @@
 ﻿namespace BoardGames.Areas.Public.Models
 {
-    using BoardGames.Models;
+    using Admin.Models;
     using System.Collections.Generic;
 
     public class ReviewsIndexViewModel

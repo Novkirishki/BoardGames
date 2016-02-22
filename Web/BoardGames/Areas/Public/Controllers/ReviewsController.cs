@@ -1,7 +1,6 @@
 ﻿namespace BoardGames.Areas.Public.Controllers
 {
     using Admin.Models;
-    using BoardGames.Models;
     using Data.Models;
     using Models;
     using Services.Data.Contracts;

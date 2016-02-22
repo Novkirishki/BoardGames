@@ -31,7 +31,7 @@
                 CreatorId = creatorId
             };
 
-            if (imageId != null)
+            if (imageId != null && imageId != 0)
             {
                 newReview.ImageId = (int)imageId;
             }
@@ -63,7 +63,7 @@
             reviewToBeEdited.MinPlayingTimeInMinutes = minTime;
             reviewToBeEdited.UrlToOfficialSite = siteUrl;
 
-            if (imageId != null)
+            if (imageId != null && imageId != 0)
             {
                 reviewToBeEdited.ImageId = (int)imageId;
             }

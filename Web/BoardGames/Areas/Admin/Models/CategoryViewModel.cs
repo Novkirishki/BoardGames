@@ -1,9 +1,10 @@
-﻿namespace BoardGames.Models
+﻿namespace BoardGames.Areas.Admin.Models
 {
     using Data.Models;
     using System.ComponentModel.DataAnnotations;
     using Web.Infrastructure.Mapping;
     using AutoMapper;
+    using System;
 
     public class CategoryViewModel : IMapFrom<Category>, IHaveCustomMappings
     {
@@ -14,6 +15,10 @@
         public string Name { get; set; }
 
         public int NumberOfReviews { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

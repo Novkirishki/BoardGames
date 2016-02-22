@@ -1,12 +1,13 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Net;
     using System.Web.Mvc;
+    using Kendo.Mvc.Extensions;
+    using Kendo.Mvc.UI;
     using BoardGames.Data.Models;
+    using Models;
     using Services.Data.Contracts;
     using Web.Infrastructure.Mapping;
     using System.Linq;
-    using BoardGames.Models;
 
     public class CategoriesController : Controller
     {
@@ -17,108 +18,49 @@
             this.categories = categories;
         }
 
-        // GET: Admin/Categories
         public ActionResult Index()
-        {
-            var allCategories = this.categories.GetAll().To<CategoryViewModel>().ToList();
-            return View(allCategories);
-        }
-
-        // GET: Admin/Categories/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Category category = this.categories.GetById((int)id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-
-            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
-            return View(viewModel);
-        }
-
-        // GET: Admin/Categories/Create
-        public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Categories/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(CategoryViewModel model)
+        public ActionResult Categories_Read([DataSourceRequest]DataSourceRequest request)
+        {
+            DataSourceResult result = this.categories
+                .GetAll()
+                .To<CategoryViewModel>()
+                .ToDataSourceResult(request);
+
+            return Json(result);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Categories_Create([DataSourceRequest]DataSourceRequest request, Category model)
         {
             if (ModelState.IsValid)
             {
                 this.categories.Add(model.Name);
-                return RedirectToAction("Index");
             }
 
-            return View(model);
+            return Json(new[] { model }.ToDataSourceResult(request, ModelState));
         }
 
-        // GET: Admin/Categories/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Category category = this.categories.GetById((int)id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-
-            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
-            return View(viewModel);
-        }
-
-        // POST: Admin/Categories/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(CategoryViewModel model, int id)
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Categories_Update([DataSourceRequest]DataSourceRequest request, Category model)
         {
             if (ModelState.IsValid)
             {
-                this.categories.Edit(id, model.Name);
-                return RedirectToAction("Index");
+                this.categories.Edit(model.Id, model.Name);
             }
 
-            return View(model);
+            return Json(new[] { model }.ToDataSourceResult(request, ModelState));
         }
 
-        // GET: Admin/Categories/Delete/5
-        public ActionResult Delete(int? id)
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Categories_Destroy([DataSourceRequest]DataSourceRequest request, Category model)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            this.categories.Delete(model.Id);
 
-            Category category = this.categories.GetById((int)id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-
-            var viewModel = AutoMapperConfig.Configuration.CreateMapper().Map<CategoryViewModel>(category);
-            return View(viewModel);
-        }
-
-        // POST: Admin/Categories/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            this.categories.Delete(id);
-            return RedirectToAction("Index");
+            return Json(new[] { model }.ToDataSourceResult(request, ModelState));
         }
     }
 }

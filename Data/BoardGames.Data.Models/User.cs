@@ -14,7 +14,6 @@
             this.Reviews = new HashSet<Review>();
             this.Likes = new HashSet<Like>();
             this.Comments = new HashSet<Comment>();
-            this.Replies = new HashSet<Reply>();
         }
 
         public virtual ICollection<Tutorial> Tutorials { get; set; }
@@ -24,8 +23,6 @@
         public virtual ICollection<Like> Likes { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-
-        public virtual ICollection<Reply> Replies { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
