@@ -232,11 +232,12 @@
     <Compile Include="Areas\Admin\Controllers\CommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ReviewsController1.cs" />
     <Compile Include="Areas\Admin\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\CategoryViewModel.cs" />
     <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\UserViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
     <Compile Include="Areas\Private\Models\TutorialBestMenuViewModel.cs" />
@@ -422,6 +423,8 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CategoryViewModel.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\CommentViewModel.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ReviewViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\UserViewModel.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -481,9 +484,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Likes\" />
-    <Folder Include="Views\Categories\" />
-    <Folder Include="Views\Comments\" />
-    <Folder Include="Views\Reviews\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
