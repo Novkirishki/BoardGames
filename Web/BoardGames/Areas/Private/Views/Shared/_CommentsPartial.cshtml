@@ -1,0 +1,35 @@
+﻿@model BoardGames.Areas.Private.Models.CommentsViewModel
+
+<div class="response-area">
+    <h2 class="bold">Comments</h2>
+    <ul class="media-list">
+        @if (Model.Comments.Count() == 0)
+        {
+            <li class="media">
+                <div class="post-comment">
+                    <div class="media-body">
+                        <h3>No comments!</h3>
+                    </div>
+                </div>
+            </li>
+        }
+        else {
+            foreach (var item in Model.Comments)
+            {
+                <li class="media">
+                    <div class="post-comment">
+                        <div class="media-body">
+                            <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">@item.Author</a></span>
+                            <p>@item.Content</p>
+                            <ul class="nav navbar-nav post-nav">
+                                <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>@item.CreatedOn.ToString("MMMM dd,yyyy")</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@Html.Partial("_CommentsPaginationPartial", Model.Pages)

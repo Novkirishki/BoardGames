@@ -238,8 +238,12 @@
     <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TutorialViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UserViewModel.cs" />
+    <Compile Include="Areas\Private\Controllers\CommentsController.cs" />
     <Compile Include="Areas\Private\Controllers\LikesController.cs" />
     <Compile Include="Areas\Private\Controllers\TutorialsController.cs" />
+    <Compile Include="Areas\Private\Models\CommentCreateViewModel.cs" />
+    <Compile Include="Areas\Private\Models\CommentsViewModel.cs" />
+    <Compile Include="Areas\Private\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialBestMenuViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialDetailsPageViewModel.cs" />
     <Compile Include="Areas\Private\Models\TutorialRandomMenuViewModel.cs" />
@@ -425,6 +429,9 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\ReviewViewModel.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\UserViewModel.cshtml" />
+    <Content Include="Areas\Private\Views\Shared\_AddCommentPartial.cshtml" />
+    <Content Include="Areas\Private\Views\Shared\_CommentsPartial.cshtml" />
+    <Content Include="Areas\Private\Views\Shared\_CommentsPaginationPartial.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -433,6 +440,8 @@
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.countTo.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -483,7 +492,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Private\Views\Likes\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>

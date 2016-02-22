@@ -1,4 +1,7 @@
-﻿@model BoardGames.Areas.Private.Models.TutorialListedViewModel
+﻿@using BoardGames.Areas.Private.Models
+@model BoardGames.Areas.Private.Models.TutorialListedViewModel
+
+@{ var currentPage = int.Parse((Request.QueryString["page"] == null) ? "1" : Request.QueryString["page"]); }
 
 <div class="col-md-12 col-sm-12">
     <div class="single-blog blog-details two-column">
@@ -16,7 +19,7 @@
                 <ul class="nav navbar-nav post-nav">
                     <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@Model.Game</a></li>
                     <li><a href="#" id="btnLike" data-id="@Model.Id" class="@((Model.IsLikedByUser == true ? "liked" : ""))"><i class="fa fa-heart"></i>@Model.LikesCount Likes</a></li>
-                    <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i>@Model.CommentsCount Comments</a></li>
+                    <li><a href="#" class="inactiveLink"><i class="fa fa-comments"></i><span id="commentsCount">@Model.CommentsCount</span> Comments</a></li>
                 </ul>
             </div>
             <div class="blog-share">
@@ -27,32 +30,11 @@
                 <span class='st_email_hcount'></span>
             </div>
             <div class="response-area">
-                <h2 class="bold">Comments</h2>
-                <ul class="media-list">
-                    <li class="media">
-                        <div class="post-comment">
-                            <div class="media-body">
-                                <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">Endure</a></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                                <ul class="nav navbar-nav post-nav">
-                                    <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="post-comment">
-                            <div class="media-body">
-                                <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">Endure</a></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                                <ul class="nav navbar-nav post-nav">
-                                    <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                @Html.Partial("_AddCommentPartial", new CommentCreateViewModel())
             </div>
+            <div id="comments">
+                @Html.Action("GetByPage", "Comments", new { area = "Private", tutorialId = Model.Id, page = currentPage})
+            </div>          
         </div>
     </div>
 </div>

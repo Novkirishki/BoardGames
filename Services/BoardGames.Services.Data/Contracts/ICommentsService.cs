@@ -12,5 +12,9 @@
         void Edit(int id, string content);
 
         void Delete(int id);
+
+        IQueryable<Comment> GetByPage(int tutorialId, int page);
+
+        int GetPagesCount(int tutorialId);
     }
 }
