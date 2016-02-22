@@ -1028,6 +1028,7 @@ ul.elements li > i{
 }
 
 .portfolio-thumb img {
+  min-height: 260px;
   width: 100%;
 }
 
