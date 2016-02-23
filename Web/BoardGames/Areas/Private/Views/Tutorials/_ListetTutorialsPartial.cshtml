@@ -15,7 +15,7 @@
             <div class="post-content overflow">
                 <h2 class="post-title bold"><a href="@Url.Action("Details", new { id = item.Id})">@item.Title</a></h2>
                 <h3 class="post-author"><a href="#" class="inactiveLink">Posted by @item.Author</a></h3>
-                <p>@item.ContentSanitized.Chop(300)</p>
+                <p>@Html.Raw(item.ContentSanitized.Chop(300))</p>
                 <a href="@Url.Action("Details", new { id = item.Id})" class="read-more">View More</a>
                 <div class="post-bottom overflow">
                     <ul class="nav nav-justified post-nav">

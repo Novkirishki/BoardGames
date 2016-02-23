@@ -21,7 +21,7 @@
                 </div>
                 <div class="project-info overflow">
                     <h3>Game info</h3>
-                    <p>@Model.Content</p>
+                    <p>@Html.Raw(Model.ContentSanitized)</p>
                 </div>
                 <div class="skills overflow">
                     <h3>Skills:</h3>
