@@ -406,7 +406,6 @@ ul.sub-menu {
 }
 
 #message {
-  height: 110px;
   resize: none;
 }
 
@@ -2773,4 +2772,8 @@ dd img{
 
 .liked .fa {  
     color: #C03035 !important;
+}
+
+.message {
+    width: 250px;
 }

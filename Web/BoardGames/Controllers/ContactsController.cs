@@ -4,6 +4,7 @@
     using System.Net;
     using System.Net.Mail;
     using System.Threading.Tasks;
+    using System.Web.Helpers;
     using System.Web.Mvc;
 
     public class ContactsController : Controller
@@ -24,11 +25,11 @@
                 using (var smtp = new SmtpClient())
                 {
                     await smtp.SendMailAsync(message);
-                    return Redirect(Request.UrlReferrer.ToString());
+                    return Json("Message sent");
                 }
             }
 
-            return Redirect(Request.UrlReferrer.ToString());
+            return Json("Could not send message");
         }
     }
 }

@@ -70,4 +70,16 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryCountTo")
+    <script>
+        function messageSent() {
+            $('#success').show();
+            $('#fail').hide();
+            $('.formInput').val('');
+        }
+
+        function messageNotSent() {
+            $('#success').hide();
+            $('#fail').show();
+        }
+    </script>
 }
