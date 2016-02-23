@@ -8,6 +8,9 @@
     using Web.Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
     using System.Linq;
+    using Common;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class ReviewsController : Controller
     {
         private readonly IReviewsService reviews;

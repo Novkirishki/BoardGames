@@ -10,7 +10,6 @@
     using Common;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-
     public class TutorialsController : Controller
     {
         private readonly ITutorialsService tutorials;

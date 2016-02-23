@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Web.Mvc;
     using Web.Infrastructure.Mapping;
+
     [Authorize]
     public class CommentsController : Controller
     {

@@ -12,6 +12,7 @@
     using System.Web.Mvc;
     using Web.Infrastructure.Mapping;
 
+    [Authorize]
     public class TutorialsController : Controller
     {
         private readonly ITutorialsService tutorials;

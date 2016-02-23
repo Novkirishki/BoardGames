@@ -1,14 +1,14 @@
 ﻿namespace BoardGames.Areas.Admin.Controllers
 {
-    using System.Data.Entity;
-    using System.Linq;
     using System.Web.Mvc;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using BoardGames.Data.Models;
     using Services.Data.Contracts;
     using Models;
     using Web.Infrastructure.Mapping;
+    using Common;
+
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class UsersController : Controller
     {
         private readonly IUsersService users;

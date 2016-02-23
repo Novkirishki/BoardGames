@@ -49,7 +49,10 @@
                         <li>@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" })</li>
                         <li>@Html.ActionLink("Contact", "Contact", new { area = "", controller = "Home" })</li>
                         <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1 })</li>
-                        <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
+                        }
                         @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                         {
                             <li class="dropdown">
