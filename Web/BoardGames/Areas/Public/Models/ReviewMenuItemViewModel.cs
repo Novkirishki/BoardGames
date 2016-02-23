@@ -2,6 +2,7 @@
 {
     using Data.Models;
     using System;
+    using System.ComponentModel.DataAnnotations;
     using Web.Infrastructure.Mapping;
 
     public class ReviewMenuItemViewModel : IMapFrom<Review>
@@ -10,6 +11,7 @@
 
         public string GameTitle { get; set; }
 
+        [UIHint("LongDate")]
         public DateTime CreatedOn { get; set; }
 
         public int ImageId { get; set; }

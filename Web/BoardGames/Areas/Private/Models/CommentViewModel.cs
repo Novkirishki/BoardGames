@@ -4,6 +4,7 @@
     using AutoMapper;
     using BoardGames.Web.Infrastructure.Mapping;
     using BoardGames.Data.Models;
+    using System.ComponentModel.DataAnnotations;
 
     public class CommentViewModel : IMapFrom<Comment>, IHaveCustomMappings
     {
@@ -13,6 +14,7 @@
 
         public string Content { get; set; }
 
+        [UIHint("ShortReviewDate")]
         public DateTime CreatedOn { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)

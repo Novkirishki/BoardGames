@@ -22,6 +22,7 @@
         [Required]
         public string Content { get; set; }
 
+        [UIHint("HtmlContent")]
         public string ContentSanitized => HtmlSanitizerAdapter.Sanitize(this.Content);
 
         [Range(1, 50, ErrorMessage = "The minimum players must be between {1} and {2}")]
@@ -39,8 +40,10 @@
         public string Creator { get; set; }
 
         [MaxLength(2083)]
+        [UIHint("Url")]
         public string UrlToOfficialSite { get; set; }
 
+        [UIHint("ShortReviewDate")]
         public DateTime CreatedOn { get; set; }
 
         public int ImageId { get; set; }

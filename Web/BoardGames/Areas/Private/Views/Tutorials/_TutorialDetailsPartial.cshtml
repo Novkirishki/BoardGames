@@ -8,13 +8,13 @@
         <div class="post-thumb">
             <a href="#" class="inactiveLink"><img src="~/Files?id=@Model.ImageId" class="img-responsive" alt="@Model.Title"></a>
             <div class="post-overlay">
-                <span class="uppercase"><a href="#" class="inactiveLink">@Model.CreatedOn.Day <br><small>@Model.CreatedOn.ToString("MMM")</small></a></span>
+                <span class="uppercase"><a href="#" class="inactiveLink">@Model.CreatedOn.Day <br><small>@Html.DisplayFor(m => m.CreatedOn)</small></a></span>
             </div>
         </div>
         <div class="post-content overflow">
             <h2 class="post-title bold"><a href="#" class="inactiveLink">@Model.Title</a></h2>
             <h3 class="post-author"><a href="#" class="inactiveLink">Posted by @Model.Author</a></h3>
-            <p>@Html.Raw(Model.ContentSanitized)</p>
+            <p>@Html.DisplayFor(m => m.ContentSanitized)</p>
             <div class="post-bottom overflow">
                 <ul class="nav navbar-nav post-nav">
                     <li><a href="#" class="inactiveLink"><i class="fa fa-tag"></i>@Model.Game</a></li>

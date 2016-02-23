@@ -436,6 +436,8 @@
     <Content Include="Areas\Private\Views\Shared\_AddCommentPartial.cshtml" />
     <Content Include="Areas\Private\Views\Shared\_CommentsPartial.cshtml" />
     <Content Include="Areas\Private\Views\Shared\_CommentsPaginationPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ShortReviewDate.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\HtmlContent.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -494,11 +496,12 @@
     <Content Include="Views\Shared\_BreadcrumpsLayout.cshtml" />
     <Content Include="Areas\Public\Views\Reviews\_CategoriesMenuPartial.cshtml" />
     <Content Include="Views\Shared\_StatisticsPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\LongDate.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateLabel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Statistics\" />
-    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

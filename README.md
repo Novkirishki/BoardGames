@@ -46,8 +46,8 @@ Administrators can create, update, delete and view details for everything in the
 	* You may use any JavaScript library of your choice - done
 		* For example Kendo UI widgets (with the ASP.NET MVC Wrappers), Chart.js for charts, etc.
 	* ASP.NET WebForms is not allowed - done
-	* Use at least **3 sections** and at least **10 partial views** - 1/3 & done
-	* Use at least **10 editor or display templates** - 5/10
+	* Use at least **3 sections** and at least **10 partial views** - done
+	* Use at least **10 editor or display templates** - done
 * Use **MS SQL Server** as database back-end - done
 	* Use **Entity Framework 6** to access your database
 	* Using **repositories and/or service layer** is a must

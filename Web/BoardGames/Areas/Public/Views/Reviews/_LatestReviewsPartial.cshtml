@@ -10,7 +10,7 @@
             </div>
             <div class="media-body">
                 <h4><a href="@Url.Action("Details", new { id = item.Id})">@item.GameTitle</a></h4>
-                <p>posted on  @item.CreatedOn.ToString("dd MMMM yyyy")</p>
+                <p>posted on  @Html.DisplayFor(m => item.CreatedOn)</p>
             </div>
         </div>
     }

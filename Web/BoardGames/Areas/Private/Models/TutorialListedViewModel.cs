@@ -5,7 +5,8 @@
     using BoardGames.Web.Infrastructure.Mapping;
     using BoardGames.Data.Models;
     using Web.Infrastructure.Sanitizing;
-    using System.Linq;
+    using System.ComponentModel.DataAnnotations;
+
     public class TutorialListedViewModel : IMapFrom<Tutorial>, IHaveCustomMappings
     {
         public int Id { get; set; }
@@ -18,6 +19,7 @@
 
         public string Content { get; set; }
 
+        [UIHint("HtmlContent")]
         public string ContentSanitized => HtmlSanitizerAdapter.Sanitize(this.Content);
 
         public string Game { get; set; }
@@ -28,6 +30,7 @@
 
         public int CommentsCount { get; set; }
 
+        [UIHint("DateLabel")]
         public DateTime CreatedOn { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)

@@ -22,7 +22,7 @@
                             <span><i class="fa fa-user"></i>Posted by <a href="#" class="inactiveLink">@item.Author</a></span>
                             <p>@item.Content</p>
                             <ul class="nav navbar-nav post-nav">
-                                <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>@item.CreatedOn.ToString("MMMM dd,yyyy")</a></li>
+                                <li><a href="#" class="inactiveLink"><i class="fa fa-clock-o"></i>@Html.DisplayFor(m => item.CreatedOn)</a></li>
                             </ul>
                         </div>
                     </div>
