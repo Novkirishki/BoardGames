@@ -2,21 +2,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section id="page-breadcrumb">
-    <div class="vertical-center sun">
-        <div class="container">
-            <div class="row">
-                <div class="action">
-                    <div class="col-sm-12">
-                        <h1 class="title">@ViewBag.Title</h1>
-                        <p>@ViewBag.Subtitle</p>
+@section navigation {
+    @RenderSection("navigation", false)
+}
+
+@section breadcrumps {
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+            <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">@ViewBag.Title</h1>
+                            <p>@ViewBag.Subtitle</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!--/#action-->
+    </section>
+    <!--/#action-->
+    @RenderSection("breadcrumps", false)
+}
 
 <div class="container">
     @RenderBody()

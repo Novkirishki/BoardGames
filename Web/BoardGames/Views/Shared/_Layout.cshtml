@@ -1,18 +1,10 @@
-﻿@using BoardGames.Models
-@using BoardGames.Common
+﻿@using BoardGames.Common
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Board Games Kingdom</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/kendo")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/kendo")
-</head>
-<body>
+@{
+    Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+@section navigation {
     <header id="header">
         <div class="container">
             <div class="row">
@@ -55,7 +47,7 @@
                                 <a href="~/Private/Tutorials/Index">Tutorials <i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
-                                    <li>@Html.ActionLink("Create new", "Create", new { area = "Private", controller = "Tutorials"})</li>
+                                    <li>@Html.ActionLink("Create new", "Create", new { area = "Private", controller = "Tutorials" })</li>
                                 </ul>
                             </li>
                         }
@@ -88,71 +80,15 @@
         </div>
     </header>
     <!--/#header-->
+    @RenderSection("navigation", false)
+}
 
-    @RenderBody()
+@section breadcrumps {
+    @RenderSection("breadcrumps", false)
+}
 
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center bottom-separator">
-                    <img src="~/images/home/under.png" class="img-responsive inline" alt="">
-                </div>
-                <div class="col-md-4 col-sm-6 col-md-offset-1">
-                    <div class="testimonial bottom">
-                        <h2>Testimonial</h2>
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img src="~/images/home/mitko.png" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <blockquote>Very cool UI. I like it. I'll steal the app from github and make money(laughing)</blockquote>
-                                <h3><a href="#">- Dimitar Kerezov</a></h3>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img src="~/images/home/tonkata.png" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <blockquote>Yeah, brother!!! It is so smooth, nice, nice. Will definitely use it when done.</blockquote>
-                                <h3><a href="">- Antonio Filipov</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="contact-info bottom">
-                        <h2>Contacts</h2>
-                        <address>
-                            E-mail: <a href="mailto:novkirishki94@gmail.com">novkirishki94@gmail.com</a> <br>
-                            Phone: +359 885763330 <br>
-                        </address>
+@RenderBody()
 
-                        <h2>Address</h2>
-                        <address>
-                            Ostri Vrah 2-B-14 <br>
-                            Vratsa, 3000 <br>
-                            Bulgaria <br>
-                        </address>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    @Html.Partial("_MessagePartial", new MessageViewModel())
-                </div>
-                <div class="col-sm-12">
-                    <div class="copyright-text text-center">
-                        <p>&copy; Nicky 2014. All Rights Reserved.</p>
-                        <p>Development by <a target="_blank" href="https://www.linkedin.com/in/nikolay-novkirishki-23262310a">Nicky</a>. Template designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/#footer-->
-
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jqueryajax")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
+@section scripts {
+    @RenderSection("scripts", false)
+}

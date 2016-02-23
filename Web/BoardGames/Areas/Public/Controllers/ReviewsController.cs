@@ -24,7 +24,7 @@
         }
 
         // GET: Public/Reviews
-        public ActionResult Index(string category, int page)
+        public ActionResult Index(string category, int page = 1)
         {
             var model = new ReviewsIndexViewModel();
 

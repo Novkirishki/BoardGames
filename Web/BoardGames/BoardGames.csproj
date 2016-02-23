@@ -252,6 +252,7 @@
     <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
     <Compile Include="Areas\Public\Models\ReviewMenuItemViewModel.cs" />
     <Compile Include="Areas\Public\Models\ReviewsIndexViewModel.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Areas\Admin\Models\ReviewViewModel.cs" />
     <Compile Include="Areas\Public\Controllers\ReviewsController.cs" />
@@ -339,6 +340,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\400.png" />
+    <Content Include="Images\404-bg.png" />
+    <Content Include="Images\404.png" />
+    <Content Include="Images\500.png" />
     <Content Include="Images\Admin\categories.jpg" />
     <Content Include="Images\Admin\comments.jpg" />
     <Content Include="Images\Admin\events.jpg" />
@@ -500,6 +505,10 @@
     <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\LongDate.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateLabel.cshtml" />
+    <Content Include="Views\Shared\_BaseLayout.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\BadRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
