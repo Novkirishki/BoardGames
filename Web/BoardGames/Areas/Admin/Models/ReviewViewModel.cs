@@ -6,6 +6,7 @@
     using AutoMapper;
     using System;
     using Web.Infrastructure.Sanitizing;
+    using System.Web.Mvc;
 
     public class ReviewViewModel : IMapFrom<Review>, IHaveCustomMappings
     {
@@ -18,7 +19,8 @@
         public int CategoryId { get; set; }
 
         public string CategoryName { get; set; }
-
+        
+        [AllowHtml]
         [Required]
         public string Content { get; set; }
 

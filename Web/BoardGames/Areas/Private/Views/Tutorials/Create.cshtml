@@ -1,0 +1,19 @@
+﻿@model BoardGames.Areas.Admin.Models.TutorialViewModel
+
+@{
+    ViewBag.Title = "Create tutorial";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Create", "Tutorials", new { area = "Private" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken();
+        @Html.EditorForModel("TutorialViewModel")
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <input type="submit" class="btn btn-submit" value="Submit" />
+            </div>
+        </div>
+    }
+</div>

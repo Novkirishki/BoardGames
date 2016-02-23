@@ -419,7 +419,7 @@
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Areas\Admin\Views\Tutorials\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\EditorTemplates\TutorialViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TutorialViewModel.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\Index.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_BestTutorialsMenuPartial.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\_RandomTutorialsMenuPartial.cshtml" />
@@ -438,6 +438,7 @@
     <Content Include="Areas\Private\Views\Shared\_CommentsPaginationPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ShortReviewDate.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\HtmlContent.cshtml" />
+    <Content Include="Areas\Private\Views\Tutorials\Create.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

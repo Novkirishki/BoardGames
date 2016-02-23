@@ -51,7 +51,13 @@
                         <li>@Html.ActionLink("Reviews", "Index", new { area = "Public", controller = "Reviews", page = 1 })</li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
+                            <li class="dropdown">
+                                <a href="~/Private/Tutorials/Index">Tutorials <i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li>@Html.ActionLink("Tutorials", "Index", new { area = "Private", controller = "Tutorials", page = 1 })</li>
+                                    <li>@Html.ActionLink("Create new", "Create", new { area = "Private", controller = "Tutorials"})</li>
+                                </ul>
+                            </li>
                         }
                         @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                         {

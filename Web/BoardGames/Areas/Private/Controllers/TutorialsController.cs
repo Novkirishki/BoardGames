@@ -1,5 +1,6 @@
 ﻿namespace BoardGames.Areas.Private.Controllers
 {
+    using Admin.Models;
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Models;
@@ -92,6 +93,26 @@
             model.Tutorial = AutoMapperConfig.Configuration.CreateMapper().Map<TutorialListedViewModel>(tutorial);
             model.Tutorial.IsLikedByUser = (this.likes.GetByUserIdAndTutorialId(model.Tutorial.Id, User.Identity.GetUserId()) != null);
             return View(model);
+        }
+        
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new TutorialViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(TutorialViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var id = this.tutorials.Add(model.Title, model.Game, Server.HtmlDecode(model.Content), User.Identity.GetUserId(), model.ImageId);
+
+            return RedirectToAction("Details", "Tutorials", new { id = id });
         }
     }
 }

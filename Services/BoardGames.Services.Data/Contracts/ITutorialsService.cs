@@ -7,7 +7,7 @@
     {
         IQueryable<Tutorial> GetAll();
 
-        void Add(string title, string gameTitle, string content, string creatorId, int? imageId = null);
+        int Add(string title, string gameTitle, string content, string creatorId, int? imageId = null);
 
         void Edit(int id, string title, string gameTitle, string content, int? imageId = null);
 

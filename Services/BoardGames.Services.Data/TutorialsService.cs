@@ -16,7 +16,7 @@
             this.tutorials = tutorials;
         }
 
-        public void Add(string title, string gameTitle, string content, string creatorId, int? imageId = null)
+        public int Add(string title, string gameTitle, string content, string creatorId, int? imageId = null)
         {
             var newTutorial = new Tutorial
             {
@@ -37,6 +37,8 @@
 
             this.tutorials.Add(newTutorial);
             this.tutorials.Save();
+
+            return newTutorial.Id;
         }
 
         public void Delete(int id)
