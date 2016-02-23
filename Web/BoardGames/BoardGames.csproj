@@ -345,6 +345,8 @@
     <Content Include="Images\Admin\reviews.jpg" />
     <Content Include="Images\Admin\tutorials.jpg" />
     <Content Include="Images\Admin\users.jpg" />
+    <Content Include="Images\Home\mitko.png" />
+    <Content Include="Images\Home\tonkata.png" />
     <Content Include="Images\lightbox\close.png" />
     <Content Include="Images\lightbox\loading.gif" />
     <Content Include="Images\lightbox\next.png" />
