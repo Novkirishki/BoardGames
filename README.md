@@ -87,7 +87,7 @@ Administrators can create, update, delete and view details for everything in the
 
 ## Application screenshots
 #### Database models
-![Database models](screenshots/models.png)
+![Database models](screenshots/models.PNG)
 
 #### Home Page
 ![Home Page](screenshots/home.png)
