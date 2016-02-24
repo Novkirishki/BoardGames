@@ -73,10 +73,14 @@ Administrators can create, update, delete and view details for everything in the
 	* categories side menu
 	* latest reviews side menu
 * Use **Ninject** (or any other dependency container) and **Automapper** - done
-* Write at least **30 unit tests** for your logic, controllers, actions, helpers, routes, etc. - 0/30
+* Write at least **30 unit tests** for your logic, controllers, actions, helpers, routes, etc. - done
 * Apply **error handling** and **data validation** to avoid crashes when invalid data is entered (both client-side and server-side) - done
 * Prevent yourself from **security** holes (XSS, XSRF, Parameter Tampering, etc.) - done
 	* Handle correctly the **special HTML characters** and tags like `<script>`, `<br />`, etc.
 	* Content that allows html is sanitized before being showed
 * Use GitHub and take advantage of the **branches** for writing your features. - done
 * **Documentation** of the project and project architecture (as `.md` file, including screenshots) - done
+
+### Application live demo
+
+[The demo at this link](http://boardgameskingdom.azurewebsites.net/)
