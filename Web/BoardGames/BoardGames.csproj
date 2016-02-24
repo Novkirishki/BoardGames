@@ -444,6 +444,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ShortReviewDate.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\HtmlContent.cshtml" />
     <Content Include="Areas\Private\Views\Tutorials\Create.cshtml" />
+    <None Include="Properties\PublishProfiles\boardgameskingdom.pubxml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
