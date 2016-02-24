@@ -81,6 +81,34 @@ Administrators can create, update, delete and view details for everything in the
 * Use GitHub and take advantage of the **branches** for writing your features. - done
 * **Documentation** of the project and project architecture (as `.md` file, including screenshots) - done
 
-### Application live demo
+## Application live demo
 
 [The demo at this link](http://boardgameskingdom.azurewebsites.net/)
+
+## Application screenshots
+#### Database models
+![Database models](screenshots/models.png)
+
+#### Home Page
+![Home Page](screenshots/home.png)
+
+#### Revies Page
+![Reviews Page](screenshots/reviews.png)
+
+#### Review Details Page
+![Review Details Page](screenshots/reviews-details.png)
+
+#### Tutorials Page
+![Tutorials Page](screenshots/tutorials.png)
+
+#### Tutorial Details Page
+![Tutorial Details Page](screenshots/tutorial-details.png)
+
+#### Admin Panel Page
+![Admin Page](screenshots/admin.png)
+
+#### Admin Page with Kendo
+![Admin Kendo](screenshots/admin-kendo.png)
+
+#### Sample Error Page
+![Error Page](screenshots/notfound.png)
