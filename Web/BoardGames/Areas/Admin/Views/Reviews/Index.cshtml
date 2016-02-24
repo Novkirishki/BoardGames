@@ -11,7 +11,7 @@
       {
           columns.Bound(c => c.CategoryName);
           columns.Bound(c => c.GameTitle).ClientTemplate("<a href='/Public/Reviews/Details/#:data.Id#'>#:data.GameTitle#</a>");
-          columns.Bound(c => c.ContentSanitized).ClientTemplate(string.Format("{0}...", "#= formatter(ContentSanitized) #")).Title("Content");
+          columns.Bound(c => c.ContentSanitized).ClientTemplate(string.Format("{0}...", "#: formatter(ContentSanitized) #")).Title("Content");
           columns.Bound(c => c.MinPlayers);
           columns.Bound(c => c.MaxPlayers);
           columns.Bound(c => c.MinAgeRequired);
